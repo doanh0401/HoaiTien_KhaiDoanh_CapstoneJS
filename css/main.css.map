@@ -1,1 +1,0 @@
-{"version":3,"sourceRoot":"","sources":["../sass/Base/_reset.scss","../sass/Layouts/_products.scss","../sass/Helpers/_variables.scss"],"names":[],"mappings":"AAAA;EACI;EACA;EACA;;;ACHJ;EACI,YC2CQ;ED1CR,aCcG;;ADZH;EACI,WCOD;;ADJH;EACI,WCHD;;;ADOP;EACI;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACI;EACA,WCbD;EDcC,OCxBM;EDyBN,aCVD;EDWC,YCiBI","file":"main.css"}
