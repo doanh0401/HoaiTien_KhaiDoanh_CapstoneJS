@@ -117,4 +117,15 @@ header .nav-item {
   color: #fff;
   transform: translateY(20px);
   transition: all 0.5s;
+}
+
+.about_section {
+  width: 100%;
+  padding-bottom: 60px;
+  background-image: url(../../img/Background-trang.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.about_section .about_tilte {
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */
