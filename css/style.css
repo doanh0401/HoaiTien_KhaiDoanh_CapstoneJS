@@ -32,11 +32,10 @@ header .nav-item {
 }
 
 .product {
-  text-align: center;
-  font-weight: 600;
-}
-.product .product_title {
   font-size: 44px;
+  font-weight: 600;
+  color: #333 !important;
+  text-align: center;
 }
 .product .text-title {
   font-size: 1.1rem;
@@ -47,14 +46,75 @@ header .nav-item {
   background-color: #fff;
   height: auto;
   border: 1px solid #7d7d7c;
-  padding: 20px 0 0 0;
   margin-top: 30px;
-  border-radius: 10px;
+}
+.product_box .product_content {
+  position: relative;
+}
+.product_box .product_content:hover .product_overlay {
+  opacity: 1;
 }
 .product_box .product_name {
-  width: 100%;
   font-size: 20px;
-  color: #333;
   font-weight: 600;
+  color: #333 !important;
+  width: 100%;
   text-align: center;
+  padding-top: 10px;
+}
+.product_box .product_intro {
+  font-size: 14px;
+  font-weight: 400;
+  color: #888 !important;
+  text-align: center;
+}
+.product_box .img_product {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.btn_buy {
+  background-color: #888;
+  padding: 15px 10px;
+  align-items: center;
+}
+.btn_buy .btn-dark {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff !important;
+  padding: 8px 10px;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn_buy .btn-dark:hover {
+  background-color: #333;
+}
+.btn_buy .price_text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff !important;
+  margin: 10px 20px;
+}
+
+.product_overlay {
+  background-color: rgba(136, 136, 136, 0.72);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  opacity: 0;
+  transition: all 0.5s;
+}
+.product_overlay:hover .overlay_text {
+  transform: translateY(0);
+}
+.product_overlay .overlay_text {
+  position: absolute;
+  bottom: 5rem;
+  left: 1rem;
+  font-size: 1.1rem;
+  color: #fff;
+  transform: translateY(20px);
+  transition: all 0.5s;
 }/*# sourceMappingURL=style.css.map */
