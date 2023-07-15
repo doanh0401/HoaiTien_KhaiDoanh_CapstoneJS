@@ -3,7 +3,7 @@
     text-align: $txt-align;
 
     .text-title {
-        font-size: $fs-2;
+        font-size: $fs-3;
     }
 }
 
@@ -33,7 +33,7 @@
     }
 
     .product_intro {
-        @include style-text($fs-1, $fw-1, $color-grey);
+        @include style-text($fs-9, $fw-1, $color-grey);
         text-align: center;
     }
 
@@ -63,7 +63,7 @@
 
     .price_text {
         @include style-text($fs-2, $fw-2, $color-white);
-        margin: $mg-6 $mg-5;
+        margin: $mg-6 $mg-7;
     }
 }
 

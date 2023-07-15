@@ -1,0 +1,23 @@
+.feedback_title {
+  @include style-text($fs-8, $fw-2, $color-black);
+}
+.feedback__item {
+  background-color: $color-white;
+  padding: $pd-12;
+  box-shadow: 0 20px 62px rgb(4 20 69 / 10%);
+  border-radius: 4px;
+  .feeback_icon {
+    @include style-text($fs-7, $fw-2, $color-icon);
+  }
+  .feedback_txt {
+    @include style-text($fs-2, $fw-1, $color-grey);
+    line-height: 28px;
+    letter-spacing: .2px;
+  }
+  .feedback__text {
+  @include style-text($fs-3, $fw-3, $color-black);
+    p {
+        @include style-text($fs-1, $fw-1, $color-grey);
+    }
+  }
+}

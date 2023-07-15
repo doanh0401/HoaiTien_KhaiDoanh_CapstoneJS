@@ -1,0 +1,56 @@
+.footer_main {
+  padding: $pd-7 0;
+  background-color: $color-black;
+  .footer_item {
+    h6 {
+      @include style-text($fs-10, $fw-2, $color-white);
+      line-height: 20px;
+      margin-bottom: $mg-5;
+      border-bottom: 1px solid rgba(232, 237, 241, 0.4);
+      padding-bottom: $pd-10;
+    }
+    li {
+      list-style: none;
+      a {
+        text-decoration: none;
+        font-size: 14px;
+        line-height: 24px;
+        color: $color-footer;
+        margin-bottom: $mg-6;
+        display: block;
+      }
+      i {
+        margin-right: $mg-6;
+        font-size: $fs-9;
+      }
+    }
+    p {
+      @include style-text($fs-9, $fw-1, $color-footer);
+      line-height: 24px;
+    }
+  }
+}
+.footer_about {
+    border-left: 1px solid rgba(232, 237, 241, 0.4);
+}
+.footer_social {
+    span {
+        color: $color-white;
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        background: rgba(255, 255, 255, 0.06);
+        display: inline-block;
+        border-radius: $br-50;
+        text-align: $txt-align;
+        margin-right: $mg-8;
+        cursor: pointer;
+        &:hover {
+            i {
+                color: $color-icon;
+                transition: all 0.5s;
+            }
+        }
+    }
+    }
+   
