@@ -1,0 +1,10 @@
+.about_section {
+    width: 100%;
+    padding-bottom: $pd-7;
+    background-image: url(../../img/Background-trang.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    .about_tilte {
+        text-align: $txt-align;
+    }
+}
