@@ -1,0 +1,18 @@
+.phoneCarousel{
+    padding: $pd-mid 0;
+    .checked {
+        color: orange;
+    }
+    h1{
+        @include style-text($fs-8,$fw-3,$color-bg-heading);
+    }
+    h3{
+        @include style-text($fs-7,$fw-3,$color-bg-heading);
+        letter-spacing: $ls-1;
+        margin: $mg-0 0;
+    }
+    p{
+        @include style-text($fs-2,$fw-1,$color-dark-1);
+        margin-bottom: $mg-2;
+    }
+}

@@ -2,6 +2,7 @@ header {
   background-color: $color-bg-heading;
   //   padding: $pd-1;
   position: fixed;
+  z-index:10; 
   width: 100%;
   .navbar-brand {
     @include style-text($fs-3, $fw-3, $color-txt);
@@ -19,3 +20,4 @@ header {
     padding: 5px $pd-1 5px 0;
   }
 }
+
