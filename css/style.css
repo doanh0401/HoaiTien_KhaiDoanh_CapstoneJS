@@ -1,6 +1,7 @@
 header {
   background-color: #2C2B30;
   position: fixed;
+  z-index: 10;
   width: 100%;
 }
 header .navbar-brand {
@@ -117,4 +118,29 @@ header .nav-item {
   color: #fff;
   transform: translateY(20px);
   transition: all 0.5s;
+}
+
+.phoneCarousel {
+  padding: 150px 0;
+}
+.phoneCarousel .checked {
+  color: orange;
+}
+.phoneCarousel h1 {
+  font-size: 44px;
+  font-weight: 700;
+  color: #2C2B30 !important;
+}
+.phoneCarousel h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2C2B30 !important;
+  letter-spacing: 0.015rem;
+  margin: 15px 0;
+}
+.phoneCarousel p {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #656774 !important;
+  margin-bottom: 25px;
 }/*# sourceMappingURL=style.css.map */
