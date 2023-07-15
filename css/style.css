@@ -25,6 +25,22 @@ header .nav-link:hover {
 header .nav-item {
   padding: 5px 25px 5px 0;
 }
+header #cart-item-count {
+  position: absolute;
+  border-radius: 2.75rem;
+  min-width: 0.6875rem;
+  line-height: 1.2em;
+  padding: 0 0.3225rem;
+  text-align: center;
+  height: 1.2rem;
+  border: 0.125rem solid #D6D6D6;
+  color: #D6D6D6;
+  background-color: #fff;
+  right: 1.125rem;
+  top: -0.1rem;
+  font-size: 14px;
+  margin-right: -0.875rem;
+}
 
 * {
   padding: 0;
@@ -147,6 +163,28 @@ html, body {
   color: #fff;
   transform: translateY(20px);
   transition: all 0.5s;
+}
+
+.modal.right .modal-dialog {
+  position: fixed;
+  margin: auto;
+  width: 500px;
+  height: 100%;
+  top: 0;
+  right: 0;
+}
+
+.modal.right .modal-content {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.modal-header, .modal-body {
+  border-bottom: 0;
+}
+
+.modal-footer {
+  border-top: 0;
 }
 
 .about_section {

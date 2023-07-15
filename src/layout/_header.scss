@@ -19,5 +19,21 @@ header {
   .nav-item{
     padding: 5px $pd-1 5px 0;
   }
+  #cart-item-count{
+    position: absolute;
+    border-radius: 2.75rem;
+    min-width: 0.6875rem;
+    line-height: 1.2em;
+    padding: 0 0.3225rem;
+    text-align: center;
+    height: 1.2rem;
+    border: 0.125rem solid $color-txt;
+    color: $color-txt;
+    background-color: #fff;
+    right: 1.125rem;
+    top: -0.1rem;
+    font-size: $fs-1;
+    margin-right: -0.875rem;
+  }
 }
 
