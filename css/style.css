@@ -32,6 +32,10 @@ header .nav-item {
   box-sizing: border-box;
 }
 
+html, body {
+  font-family: "Montserrat", sans-serif;
+}
+
 .phoneCarousel {
   padding: 150px 0;
 }
@@ -64,7 +68,7 @@ header .nav-item {
   text-align: center;
 }
 .product .text-title {
-  font-size: 1.1rem;
+  font-size: 1.8rem;
 }
 
 .product_box {
@@ -89,7 +93,7 @@ header .nav-item {
   padding-top: 10px;
 }
 .product_box .product_intro {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 400;
   color: #888 !important;
   text-align: center;
@@ -120,7 +124,7 @@ header .nav-item {
   font-size: 1.1rem;
   font-weight: 600;
   color: #fff !important;
-  margin: 10px 20px;
+  margin: 10px 12px;
 }
 
 .product_overlay {
@@ -154,4 +158,95 @@ header .nav-item {
 }
 .about_section .about_content {
   text-align: center;
+}
+
+.feedback_title {
+  font-size: 44px;
+  font-weight: 600;
+  color: #333 !important;
+}
+
+.feedback__item {
+  background-color: #fff;
+  padding: 2rem;
+  box-shadow: 0 20px 62px rgba(4, 20, 69, 0.1);
+  border-radius: 4px;
+}
+.feedback__item .feeback_icon {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ff6e65 !important;
+}
+.feedback__item .feedback_txt {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #888 !important;
+  line-height: 28px;
+  letter-spacing: 0.2px;
+}
+.feedback__item .feedback__text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333 !important;
+}
+.feedback__item .feedback__text p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #888 !important;
+}
+
+.footer_main {
+  padding: 60px 0;
+  background-color: #333;
+}
+.footer_main .footer_item h6 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff !important;
+  line-height: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(232, 237, 241, 0.4);
+  padding-bottom: 10px;
+}
+.footer_main .footer_item li {
+  list-style: none;
+}
+.footer_main .footer_item li a {
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 24px;
+  color: #cecece;
+  margin-bottom: 10px;
+  display: block;
+}
+.footer_main .footer_item li i {
+  margin-right: 10px;
+  font-size: 13px;
+}
+.footer_main .footer_item p {
+  font-size: 13px;
+  font-weight: 400;
+  color: #cecece !important;
+  line-height: 24px;
+}
+
+.footer_about {
+  border-left: 1px solid rgba(232, 237, 241, 0.4);
+}
+
+.footer_social span {
+  color: #fff;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  background: rgba(255, 255, 255, 0.06);
+  display: inline-block;
+  border-radius: 50%;
+  text-align: center;
+  margin-right: 5px;
+  cursor: pointer;
+}
+.footer_social span:hover i {
+  color: #ff6e65;
+  transition: all 0.5s;
 }/*# sourceMappingURL=style.css.map */
