@@ -119,111 +119,16 @@
             Iphone & Samsung
           </p>
         </div>
+        <div class="col-12 col-lg-2 mt-lg-3 mt-2 ">
+          <select name="" id="productType" class="form-control" >
+              <option value="All">All</option>
+              <option value="Samsung">Samsung</option>
+              <option value="Iphone">Iphone</option>
+          </select>
+      </div>
+        <div id="loader" class="custom-loader" style="display: none;"></div>
         <div class="product_container">
-          <div class="row">
-            <div class="col-lg-3 col-sm-6">
-              <div class="product_box">
-                <div class="product_content">
-                  <h2 class="product_name">Samsung m51</h2>
-                  <p class="product_intro">Thiết kế đột phá, màn hình tuyệt đỉnh</p>
-                  <img src="./img/samsung-galaxy-m51-trang-new-600x600-600x600.jpg" class="img_product" alt="">
-                  <div class="product_overlay">
-                    <div class="overlay_text">
-                      <p>Screen: 6.9"</p>
-                      <p>BackCamera: Chính 64 MP & Phụ 12 MP, 5 MP, 5 MP</p>
-                      <p>FrontCamera: 32 MP</p>
-                      <p>Type: Samsung</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="btn_main">
-                  <div class="btn_buy d-flex justify-content-between">
-                    <div class="btn btn-dark">BUY NOW</div>
-                    <div>
-                      <h4 class="price_text">Price 3500</h4>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-              <div class="product_box">
-                <div class="product_content">
-                  <h2 class="product_name">Samsung m22</h2>
-                  <p class="product_intro">Thiết kế mang tính đột phá</p>
-                  <img src="./img/samsung-galaxy-m51-trang-new-600x600-600x600.jpg" class="img_product" alt="">
-                  <div class="product_overlay">
-                    <div class="overlay_text">
-                      <p>Screen: 6.9"</p>
-                      <p>BackCamera: Chính 12 MP & Phụ 64 MP, 12 MP</p>
-                      <p>FrontCamera: 32 MP</p>
-                      <p>Type: Samsung</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="btn_main">
-                  <div class="btn_buy d-flex justify-content-between">
-                    <div class="btn btn-dark">BUY NOW</div>
-                    <div>
-                      <h4 class="price_text">Price 45000</h4>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-              <div class="product_box">
-                <div class="product_content">
-                  <h2 class="product_name">IphoneX</h2>
-                  <p class="product_intro">Thiết kế mang tính đột phá</p>
-                  <img src="./img/iphone-x-64gb-hh-600x600.jpg" class="img_product" alt="">
-                  <div class="product_overlay">
-                    <div class="overlay_text">
-                      <p>Screen: 6.8"</p>
-                      <p>BackCamera: 2 camera 12 MP</p>
-                      <p>FrontCamera: 7 MP</p>
-                      <p>Type: Iphone</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="btn_main">
-                  <div class="btn_buy d-flex justify-content-between">
-                    <div class="btn btn-dark">BUY NOW</div>
-                    <div>
-                      <h4 class="price_text">Price 1000</h4>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-            <div class="col-lg-3 col-sm-6">
-              <div class="product_box">
-                <div class="product_content">
-                  <h2 class="product_name">Iphone 11</h2>
-                  <p class="product_intro">Thiết kế mang tính đột phá</p>
-                  <img src="./img/iphone-11-promax-xanh-ht-mobile-.jpg" class="img_product" alt="">
-                  <div class="product_overlay">
-                    <div class="overlay_text">
-                      <p>Screen: 5.4"</p>
-                      <p>BackCamera: Chính 12 MP & Phụ 64 MP, 12 MP</p>
-                      <p>FrontCamera: 32 MP</p>
-                      <p>Type: Iphone</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="btn_main">
-                  <div class="btn_buy d-flex justify-content-between">
-                    <div class="btn btn-dark">BUY NOW</div>
-                    <div>
-                      <h4 class="price_text">Price 1000</h4>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
+          <div class="row" id="product">
           </div>
         </div>
       </div>
@@ -410,6 +315,17 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
+    <!-- Axios -->
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"
+    integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="./customer/models/product.js"></script>
+    <script src="./customer/services/api.js"></script>
+    <script src="./customer/controller/index.js"></script>
   <script src="./js/main.js"></script>
 </body>
 
