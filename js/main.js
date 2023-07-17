@@ -1,15 +1,15 @@
-//Scroll Header
-window.onscroll = function() {scrollFunction()};
-function scrollFunction() {
-  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    document.getElementById("header").classList.add("headerScroll");
-    toggleBtn.style.color="black";
-    document.getElementById("dropDown").classList.remove("text-white");
-    document.getElementById("logo").style.color = "black";
-  } else {
-    document.getElementById("header").classList.remove("headerScroll");
-    toggleBtn.style.color="white";
-    document.getElementById("dropDown").classList.add("text-white");
-    document.getElementById("logo").style.color = "#fb811e";
+//Cart
+let toggle = false;
+const cartBtn = document.querySelector(".fa-times");
+const cartShow = document.querySelector(".fa-cart-shopping");
+cartShow.addEventListener("click",function(){
+  if(toggle){
+    document.getElementById("cart").style.right="-100%";
+  }else{
+    document.getElementById("cart").style.right="0"; 
   }
-}
+  toggle = !toggle; 
+})
+cartBtn.addEventListener("click",function(){
+  document.getElementById("cart").style.right="-100%";
+})
