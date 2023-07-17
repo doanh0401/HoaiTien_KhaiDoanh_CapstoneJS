@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Admin page</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <link>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body class="body_admin">
+    <div class="vertical-nav bg-white" id="sidebar">
+      <div class="py-4 px-3 mb-4 bg-light">
+        <div class="media d-flex align-items-center">
+          <img
+            src="../img/av2.png"
+            alt="..."
+            width="65"
+            class="mr-3 rounded-circle img-thumbnail shadow-sm"
+          />
+          <div class="media-body">
+            <h4 class="m-0">Cyber Phone</h4>
+            <p class="font-weight-light text-muted mb-0">Web developer</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">
+        Main
+      </p>
+      <ul class="nav flex-column bg-white mb-0">
+        <li class="nav-item">
+          <a href="#" class="nav-link text-dark font-italic bg-light">
+            <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+            Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link text-dark font-italic">
+            <i class="fa fa-address-card mr-3 text-primary fa-fw"></i>
+            About
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link text-dark font-italic">
+            <i class="fa fa-cubes mr-3 text-primary fa-fw"></i>
+            Services
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link text-dark font-italic">
+            <i class="fa fa-picture-o mr-3 text-primary fa-fw"></i>
+            Gallery
+          </a>
+        </li>
+      </ul>
+
+      <p class="text-gray font-weight-bold text-uppercase px-3 small py-4 mb-0">
+        Charts
+      </p>
+
+      <ul class="nav flex-column bg-white mb-0">
+        <li class="nav-item">
+          <a href="#" class="nav-link text-dark font-italic">
+            <i class="fa fa-area-chart mr-3 text-primary fa-fw"></i>
+            Area charts
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link text-dark font-italic">
+            <i class="fa fa-bar-chart mr-3 text-primary fa-fw"></i>
+            Bar charts
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link text-dark font-italic">
+            <i class="fa fa-pie-chart mr-3 text-primary fa-fw"></i>
+            Pie charts
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link text-dark font-italic">
+            <i class="fa fa-line-chart mr-3 text-primary fa-fw"></i>
+            Line charts
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="page-content p-5" id="content">
+      <!-- Toggle button -->
+      <button
+        id="sidebarCollapse"
+        type="button"
+        class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"
+      >
+        <i class="fa fa-bars mr-2"></i
+        ><small class="text-uppercase font-weight-bold">Toggle</small>
+      </button>
+      <!-- content -->
+      <h2 class="display-4 text-white">PRODUCT MANAGEMENT</h2>
+      <div class="separator"></div>
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            href="#DanhSachSP"
+            role="tab"
+            data-toggle="tab"
+            >List Product</a
+          >
+        </li>
+      </ul>
+      <br />
+      <!-- Tab panes -->
+      <div class="tab-content">
+        <!--Danh sách sản phẩm -->
+        <div role="tabpanel" class="tab-pane in active" id="DanhSachSP">
+          <div class="row">
+            <div class="col-md-8">
+              <!-- BEGIN BUTTOM THÊM MỚI -->
+              <button
+                id="btnThemSP"
+                class="btn btn-success"
+                data-toggle="modal"
+                data-target="#myModal"
+              >
+                <i class="fa fa-plus mr-1"></i>
+                Add new
+              </button>
+              <!-- END BUTTON THÊM MỚI -->
+            </div>
+            <div class="col-md-4">
+              <!-- BEGIN TÌM KIẾM -->
+              <div class="input-group mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Nhập từ khóa"
+                  aria-label="Recipient's username"
+                  aria-describedby="basic-addon2"
+                />
+                <div class="input-group-append">
+                  <span class="input-group-text" id="basic-addon2"
+                    ><i class="fa fa-search"></i
+                  ></span>
+                </div>
+              </div>
+              <!-- END TÌM KIẾM -->
+            </div>
+          </div>
+          <div class="clear-fix"></div>
+          <div class="tblSanPham" id="tblSanPham">
+            <!-- BEGIN TABLE SẢN PHẨM -->
+            <table class="table table-bordered">
+              <thead>
+                <th>STT</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Image</th>
+                <th>Describe</th>
+                <th>Action</th>
+              </thead>
+              <tbody id="tblDanhSachSP"></tbody>
+            </table>
+            <!-- END TABLE SẢN PHẨM -->
+          </div>
+          <br />
+        </div>
+        <!-- Kết thúc danh sách sản phẩm -->
+      </div>
+
+      <!--KetThuc Tabmenu-->
+
+      <!-- The Modal -->
+      <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Modal Heading</h4>
+              <button type="button" class="close" data-dismiss="modal">
+                &times;
+              </button>
+            </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+              <div class="form-group">
+                <label>Name</label>
+                <input
+                  id="TenSP"
+                  class="form-control"
+                  placeholder="Nhập vào tên sản phẩm"
+                />
+              </div>
+              <div class="form-group">
+                <label>Price</label>
+                <input
+                  id="GiaSP"
+                  class="form-control"
+                  placeholder="Nhập vào giá"
+                />
+              </div>
+              <div class="form-group">
+                <label>Image</label>
+                <input
+                  id="HinhSP"
+                  class="form-control"
+                  placeholder="Nhập vào hình sản phẩm"
+                />
+              </div>
+              <div class="form-group">
+                <label for="">Describe: </label>
+                <textarea
+                  class="form-control"
+                  id="MoTa"
+                  cols="30"
+                  rows="10"
+                ></textarea>
+              </div>
+            </div>
+            <!-- Modal footer -->
+            <div class="modal-footer"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container"></div>
+    <style>
+      #container {
+        min-width: 310px;
+        max-width: 800px;
+        height: 400px;
+        margin: 0 auto;
+      }
+    </style>
+    </div>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"
+    integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
+  <script src="./models/productAd.js"></script>
+  <script src="./services/apiAd.js"></script>
+    <script src="./controller/indexAd.js"></script>
+  </body>
+</html>
