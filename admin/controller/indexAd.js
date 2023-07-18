@@ -51,6 +51,8 @@ function renderTable(data) {
 function addBtnProduct() {
   document.querySelector(".modal-title").innerHTML = "Add Product";
   document.querySelector(".modal-footer").innerHTML = `<button onclick="addProduct()" class="btn btn-success">Add</button>`
+  clearInput("TenSP", "GiaSP", "HinhSP", "screen", "backCamera", "frontCamera", "typePhone", "MoTa");
+  clearError("errorName", "errorPrice", "errorImage", "errorScreen", "errorbackCamera", "errorfrontCamera", "errorTypePhone", "errorDescribe");
 }
 // hàm thêm product
 function addProduct() {
@@ -62,8 +64,8 @@ function addProduct() {
   var frontCamera = getEle("frontCamera").value;
   var type = getEle("typePhone").value;
   var describe = getEle("MoTa").value;
-  
-  if(checkValidation()) {
+
+  if (checkValidation()) {
     var product = new Product("", name, price, image, screen, backCamera, frontCamera, describe, type);
     var promise = api.addProductApi(product);
     promise
@@ -73,7 +75,7 @@ function addProduct() {
       })
       .catch(function (error) {
         console.log(error);
-      }); 
+      });
   }
 }
 // hàm xóa sản phẩm
@@ -106,7 +108,7 @@ function editProduct(id) {
     .catch(function (error) {
       console.log(error);
     })
-    
+  clearError("errorName", "errorPrice", "errorImage", "errorScreen", "errorbackCamera", "errorfrontCamera", "errorTypePhone", "errorDescribe");
 }
 
 // hàm cập nhật product 
@@ -123,12 +125,36 @@ function updateProduct(id) {
     var product = new Product(id, name, price, image, screen, backCamera, frontCamera, describe, type);
     var promise = api.updateProductApi(product);
     promise
-    .then(function(results){
-      getListProduct();
-      document.querySelector(".close").click();
-    })
-    .catch(function(error){
-      console.log(error);
-    })
+      .then(function (results) {
+        getListProduct();
+        document.querySelector(".close").click();
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
   }
 }
+// hàm tìm kiếm sản phẩm
+function searchNameProduct() {
+  var dataInput = getEle("searchtxt").value;
+  var array = [];
+  var promise = api.ListProductApi();
+  promise
+    .then(function (results) {
+
+      for (var i = 0; i < results.data.length; i++) {
+        var product = results.data[i];
+        var dataInputLowerCase = dataInput.toLowerCase();
+        var dataLowerCase = product.name.toLowerCase();
+        if (dataLowerCase.indexOf(dataInputLowerCase) !== -1) {
+          array.push(product);
+        }
+      }
+      renderTable(array);
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
+
+}
+getEle("searchtxt").addEventListener("keyup", searchNameProduct);

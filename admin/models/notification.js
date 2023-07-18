@@ -18,13 +18,35 @@ function checkValidation() {
     var type = getEle("typePhone").value;
     var describe = getEle("MoTa").value;
     isValue = true;
-    isValue &= validation.checkEmpty(name, "errorName", "Vui lòng nhập tên sản phẩm");
-    isValue &= validation.checkEmpty(price, "errorPrice", "Vui lòng nhập giá sản phẩm");
-    isValue &= validation.checkEmpty(image, "errorImage", "Vui lòng thêm ảnh");
-    isValue &= validation.checkEmpty(screen, "errorScreen", "Vui lòng nhập kích thước màn hình");
-    isValue &= validation.checkEmpty(backCamera, "errorbackCamera", "Vui lòng nhập thông tin camera sau");
-    isValue &= validation.checkEmpty(frontCamera, "errorfrontCamera", "Vui lòng nhập thông tin camera trước");
-    isValue &= validation.checkEmpty(type, "errorTypePhone", "Vui lòng nhập loại sản phẩm");
-    isValue &= validation.checkEmpty(describe, "errorDescribe", "Vui lòng nhập mô tả");
+    isValue &= validation.checkEmpty(name, "errorName", "(*) Vui lòng nhập tên sản phẩm");
+    isValue &= validation.checkEmpty(price, "errorPrice", "(*) Vui lòng nhập giá sản phẩm") && validation.CheckNumber(price, "errorPrice", "(*) Giá sản phẩm vui lòng nhập số");
+    isValue &= validation.checkEmpty(image, "errorImage", "(*) Vui lòng thêm ảnh");
+    isValue &= validation.checkEmpty(screen, "errorScreen", "(*) Vui lòng nhập kích thước màn hình");
+    isValue &= validation.checkEmpty(backCamera, "errorbackCamera", "(*) Vui lòng nhập thông tin camera sau");
+    isValue &= validation.checkEmpty(frontCamera, "errorfrontCamera", "(*) Vui lòng nhập thông tin camera trước");
+    isValue &= validation.checkEmptyOption("typePhone", "errorTypePhone", "(*) Vui lòng nhập loại sản phẩm");
+    isValue &= validation.checkEmpty(describe, "errorDescribe", "(*) Vui lòng nhập mô tả");
     return isValue;
+}
+// xóa input
+function clearInput(name, price, image, screen, backCamera, frontCamera, type, describe) {
+    getEle(name).value = "";
+    getEle(price).value = "";
+    getEle(image).value = "";
+    getEle(screen).value = "";
+    getEle(backCamera).value = "";
+    getEle(frontCamera).value = "";
+    getEle(type).value = 0;
+    getEle(describe).value = "";
+}
+// xóa thông báo 
+function clearError(errorName, errorPrice, errorImage, errorScreen, errorbackCamera, errorfrontCamera ,errorTypePhone, errorDescribe) {
+    hiddenError(errorName);
+    hiddenError(errorPrice);
+    hiddenError(errorImage);
+    hiddenError(errorScreen);
+    hiddenError(errorbackCamera);
+    hiddenError(errorfrontCamera);
+    hiddenError(errorTypePhone);
+    hiddenError(errorDescribe);
 }

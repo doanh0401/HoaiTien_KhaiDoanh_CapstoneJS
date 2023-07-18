@@ -106,7 +106,7 @@
       <!--Danh sách sản phẩm -->
       <div role="tabpanel" class="tab-pane in active" id="DanhSachSP">
         <div class="row">
-          <div class="col-md-8">
+          <div class="col-md-2">
             <!-- BEGIN BUTTOM THÊM MỚI -->
             <button onclick="addBtnProduct()" id="btnThemSP" class="btn btn-success" data-toggle="modal"
               data-target="#myModal">
@@ -115,11 +115,17 @@
             </button>
             <!-- END BUTTON THÊM MỚI -->
           </div>
-          <div class="col-md-4">
+          <div class="col-md-2">
+            <select name="" id="productType" class="form-control" >
+                <option value="All">Sản phẩm mới</option>
+                <option value="giaCao">Giá từ thấp đến cao</option>
+                <option value="giaThap">Giá từ cao đến thấp</option>
+            </select>
+          </div>
+          <div class="col-md-8">
             <!-- BEGIN TÌM KIẾM -->
             <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Nhập từ khóa" aria-label="Recipient's username"
-                aria-describedby="basic-addon2" />
+              <input id="searchtxt" type="text" class="form-control" placeholder="Nhập từ khóa" />
               <div class="input-group-append">
                 <span class="input-group-text" id="basic-addon2"><i class="fa fa-search"></i></span>
               </div>
@@ -199,7 +205,8 @@
             </div>
             <div class="form-group">
               <label for="Phone">Chọn loại sản phẩm:</label>
-              <select name="Phone" id="typePhone">
+              <select class="form-control" name="Phone" id="typePhone">
+                <option value="0">Chọn loại sản phẩm</option>
                 <option value="Samsung">Samsung</option>
                 <option value="Iphone">Iphone</option>
               </select>
