@@ -35,9 +35,9 @@ function renderUI(data) {
           <img src="./img/${product.img}" class="img_product" alt="">
           <div class="product_overlay">
             <div class="overlay_text">
-              <p>${product.screen} "</p>
-              <p>${product.backCamera}</p>
-              <p>${product.frontCamera}</p>
+              <p>Screen: ${product.screen} "</p>
+              <p>BackCamera: ${product.backCamera}</p>
+              <p>FrontCamera: ${product.frontCamera}</p>
               <p>Type: ${product.type}</p>
             </div>
           </div>
@@ -46,7 +46,7 @@ function renderUI(data) {
           <div class="btn_buy d-flex justify-content-between">
             <div class="btn btn-dark">BUY NOW</div>
             <div>
-              <h4 class="price_text">${product.price}</h4>
+              <h4 class="price_text">Price ${product.price}</h4>
             </div>
           </div>
         </div>
