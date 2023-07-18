@@ -62,16 +62,19 @@ function addProduct() {
   var frontCamera = getEle("frontCamera").value;
   var type = getEle("typePhone").value;
   var describe = getEle("MoTa").value;
-  var product = new Product("", name, price, image, screen, backCamera, frontCamera, describe, type);
-  var promise = api.addProductApi(product);
-  promise
-    .then(function (results) {
-      getListProduct();
-      document.querySelector(".close").click();
-    })
-    .catch(function (error) {
-      console.log(error);
-    })
+  
+  if(checkValidation()) {
+    var product = new Product("", name, price, image, screen, backCamera, frontCamera, describe, type);
+    var promise = api.addProductApi(product);
+    promise
+      .then(function (results) {
+        getListProduct();
+        document.querySelector(".close").click();
+      })
+      .catch(function (error) {
+        console.log(error);
+      }); 
+  }
 }
 // hàm xóa sản phẩm
 function delProduct(id) {
@@ -116,14 +119,16 @@ function updateProduct(id) {
   var frontCamera = getEle("frontCamera").value;
   var describe = getEle("MoTa").value;
   var type = getEle("typePhone").value;
-  var product = new Product(id, name, price, image, screen, backCamera, frontCamera, describe, type);
-  var promise = api.updateProductApi(product);
-  promise
-  .then(function(results){
-    getListProduct();
-    document.querySelector(".close").click();
-  })
-  .catch(function(error){
-    console.log(error);
-  })
+  if (checkValidation()) {
+    var product = new Product(id, name, price, image, screen, backCamera, frontCamera, describe, type);
+    var promise = api.updateProductApi(product);
+    promise
+    .then(function(results){
+      getListProduct();
+      document.querySelector(".close").click();
+    })
+    .catch(function(error){
+      console.log(error);
+    })
+  }
 }
