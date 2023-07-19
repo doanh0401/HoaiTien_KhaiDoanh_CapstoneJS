@@ -82,14 +82,22 @@ function addProduct() {
 }
 // hàm xóa sản phẩm
 function delProduct(id) {
+  document.getElementById("confirmation-popup").style.display = "block";
+  document.getElementById("confirm-button").addEventListener("click", function() {
   var promise = api.delProductApi(id);
   promise
     .then(function (results) {
       getListProduct();
+      alert(`Delete ${results.data.name} success`)
     })
     .catch(function (error) {
       console.log(error);
     })
+    document.getElementById("confirmation-popup").style.display = "none";
+  });
+  document.getElementById("cancel-button").addEventListener("click", function() {
+    document.getElementById("confirmation-popup").style.display = "none";
+  });
 }
 // hàm sửa sản phẩm 
 function editProduct(id) {
