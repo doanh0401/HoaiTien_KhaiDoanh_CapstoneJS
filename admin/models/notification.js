@@ -1,4 +1,4 @@
-var validation = new Validation()
+var validation = new Validation();
 function showError(errorId, mess) {
     getEle(errorId).style.display = "block";
     getEle(errorId).innerHTML = mess;
@@ -27,7 +27,7 @@ function checkValidation() {
     isValue &= validation.checkEmptyOption("typePhone", "errorTypePhone", "(*) Vui lòng nhập loại sản phẩm");
     isValue &= validation.checkEmpty(describe, "errorDescribe", "(*) Vui lòng nhập mô tả");
     return isValue;
-}
+  }
 // xóa input
 function clearInput(name, price, image, screen, backCamera, frontCamera, type, describe) {
     getEle(name).value = "";
