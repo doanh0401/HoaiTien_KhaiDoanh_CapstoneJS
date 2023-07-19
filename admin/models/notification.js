@@ -18,7 +18,10 @@ function checkValidation() {
     var type = getEle("typePhone").value;
     var describe = getEle("MoTa").value;
     isValue = true;
-    isValue &= validation.checkEmpty(name, "errorName", "(*) Vui lòng nhập tên sản phẩm");
+    getListProduct()
+    .then(function(result){
+        isValue &= validation.checkEmpty(name, "errorName", "(*) Vui lòng nhập tên sản phẩm") && validation.checkExistName(name, "errorName", "(*) Tên sản phẩm đã tồn tại", result);
+    });
     isValue &= validation.checkEmpty(price, "errorPrice", "(*) Vui lòng nhập giá sản phẩm") && validation.CheckNumber(price, "errorPrice", "(*) Giá sản phẩm vui lòng nhập số");
     isValue &= validation.checkEmpty(image, "errorImage", "(*) Vui lòng thêm ảnh");
     isValue &= validation.checkEmpty(screen, "errorScreen", "(*) Vui lòng nhập kích thước màn hình");
