@@ -11,10 +11,12 @@ $(function () {
 // 
 // hàm lấy sảm phẩm
 function getListProduct() {
+  getEle("loader").style.display = "block";
   var promise = api.ListProductApi();
   promise
     .then(function (results) {
       renderTable(results.data);
+      getEle("loader").style.display = "none";
     })
     .catch(function (error) {
       console.log(error);
@@ -38,9 +40,9 @@ function renderTable(data) {
             <td>${product.desc} </td>
             <td>${product.type} </td>
             <td>
-                <button class="btn btn-warning" data-toggle="modal"
+                <button class="btn btn-warning mt-1" data-toggle="modal"
                 data-target="#myModal" onclick="editProduct(${product.id})">Edit</button>
-                <button class="btn btn-danger" onclick="delProduct(${product.id})">Del</button>
+                <button class="btn btn-danger mt-1" onclick="delProduct(${product.id})">Del</button>
             </td>
         </tr>
     `
@@ -141,7 +143,6 @@ function searchNameProduct() {
   var promise = api.ListProductApi();
   promise
     .then(function (results) {
-
       for (var i = 0; i < results.data.length; i++) {
         var product = results.data[i];
         var dataInputLowerCase = dataInput.toLowerCase();
@@ -158,3 +159,50 @@ function searchNameProduct() {
 
 }
 getEle("searchtxt").addEventListener("keyup", searchNameProduct);
+
+// hàm sắp sếp 
+getEle("productType").addEventListener("change", priceSort)
+function priceSort() {
+  var inputSort = getEle("productType").value;
+  var promise = api.ListProductApi();
+  promise
+    .then(function (result) {
+      if (inputSort === "giaThap") {
+        var priceProduct = sortDescending(result.data);
+        renderTable(priceProduct);
+      } else if (inputSort === "giaCao") {
+        renderTable(sortAscending(result.data));
+      } else {
+        renderTable(result.data);
+      }
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
+}
+// hàm lấy giá từ lớn => bé
+function sortDescending(arr) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    for (let j = 0; j < arr.length - i - 1; j++) {
+      if (Number(arr[j].price) < Number(arr[j + 1].price)) {
+        var temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  }
+  return arr;
+}
+// hàm lấy giá trị từ bé => lớn
+function sortAscending(arr) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    for (let j = 0; j < arr.length - i - 1; j++) {
+      if (Number(arr[j].price) > Number(arr[j + 1].price)) {
+        var temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  }
+  return arr;
+}
