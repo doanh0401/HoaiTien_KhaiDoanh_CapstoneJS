@@ -10,19 +10,36 @@ $(function () {
 });
 // 
 // hàm lấy sảm phẩm
+// function getListProduct() {
+//   getEle("loader").style.display = "block";
+//   var data = [];
+//   var promise = api.ListProductApi();
+//   promise
+//     .then(function (results) {
+//       renderTable(results.data);
+//       getEle("loader").style.display = "none";
+//       data = results.data;
+//     })
+//     .catch(function (error) {
+//       console.log(error);
+//     })
+//   return data;
+// }
 function getListProduct() {
   getEle("loader").style.display = "block";
   var promise = api.ListProductApi();
-  promise
-    .then(function (results) {
-      renderTable(results.data);
-      getEle("loader").style.display = "none";
-    })
-    .catch(function (error) {
-      console.log(error);
-    })
+  return promise.then(function (result) {
+    getEle("loader").style.display = "none";
+    renderTable(result.data);
+    return result.data;
+  }).catch(function (error) {
+    console.log(error);
+  });
 }
-getListProduct();
+getListProduct()
+// .then(function(result){
+//   console.log(result);
+// });
 // hàm render sảm phẩm
 function renderTable(data) {
   var content = "";

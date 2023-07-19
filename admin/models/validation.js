@@ -24,5 +24,20 @@ function Validation () {
         }
         showError(errorId, mess);
         return false;
+    };
+    this.checkExistName = function (value, errorId, mess, listProduct) {
+        var existName = false;
+        for(var i = 0; i < listProduct.length; i++) {
+            if(value === listProduct[i].name) {
+                existName = true;
+                break;
+            }
+        }
+        if(existName) {
+            showError(errorId, mess);
+            return false;
+        }
+        hiddenError(errorId);
+        return true;
     }
 }
