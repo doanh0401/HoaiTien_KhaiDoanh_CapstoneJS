@@ -29,8 +29,8 @@ function getListProduct() {
   getEle("loader").style.display = "block";
   var promise = api.ListProductApi();
   return promise.then(function (result) {
-    getEle("loader").style.display = "none";
     renderTable(result.data);
+    getEle("loader").style.display = "none";
     return result.data;
   }).catch(function (error) {
     console.log(error);
@@ -84,7 +84,7 @@ function addProduct() {
   var type = getEle("typePhone").value;
   var describe = getEle("MoTa").value;
 
-  if (checkValidation()) {
+  if (checkValidation(true)) {
     var product = new Product("", name, price, image, screen, backCamera, frontCamera, describe, type);
     var promise = api.addProductApi(product);
     promise
@@ -148,7 +148,7 @@ function updateProduct(id) {
   var frontCamera = getEle("frontCamera").value;
   var describe = getEle("MoTa").value;
   var type = getEle("typePhone").value;
-  if (checkValidation()) {
+  if (checkValidation(false)) {
     var product = new Product(id, name, price, image, screen, backCamera, frontCamera, describe, type);
     var promise = api.updateProductApi(product);
     promise
@@ -186,7 +186,7 @@ function searchNameProduct() {
 getEle("searchtxt").addEventListener("keyup", searchNameProduct);
 
 // hàm sắp sếp 
-getEle("productType").addEventListener("change", priceSort)
+getEle("productType").addEventListener("change", priceSort);
 function priceSort() {
   var inputSort = getEle("productType").value;
   var promise = api.ListProductApi();
