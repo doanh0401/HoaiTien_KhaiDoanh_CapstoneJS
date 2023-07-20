@@ -7,8 +7,32 @@ function hiddenError(errorId) {
     getEle(errorId).style.display = "none";
     getEle(errorId).innerHTML = "";
 }
+function clearErrorKeyup(errorId, value) {
+    function clearErrorWhenInput() {
+        // console.log(123);
+        getEle(errorId).style.display = "none";
+        getEle(errorId).innerHTML = "";
+    }
+    getEle(value).addEventListener("keyup", clearErrorWhenInput);
+    clearErrorWhenInput();
+}
+// clearErrorOptions
+getEle("typePhone").addEventListener("change", clearErrorOption);
+function clearErrorOption() {
+    var inputOption = getEle("productType").value;
+    if (inputOption !== 0) {
+        hiddenError("errorTypePhone");
+    }
+}
+clearErrorKeyup("errorScreen", "screen");
+clearErrorKeyup("errorbackCamera", "backCamera");
+clearErrorKeyup("errorName", "TenSP");
+clearErrorKeyup("errorImage", "HinhSP");
+clearErrorKeyup("errorPrice", "GiaSP");
+clearErrorKeyup("errorfrontCamera", "frontCamera");
+clearErrorKeyup("errorDescribe", "MoTa");
 // check validation
-function checkValidation() {
+function checkValidation(isAdd) {
     var name = getEle("TenSP").value;
     var price = getEle("GiaSP").value;
     var image = getEle("HinhSP").value;
@@ -18,10 +42,12 @@ function checkValidation() {
     var type = getEle("typePhone").value;
     var describe = getEle("MoTa").value;
     isValue = true;
-    getListProduct()
-    .then(function(result){
-        isValue &= validation.checkEmpty(name, "errorName", "(*) Vui lòng nhập tên sản phẩm") && validation.checkExistName(name, "errorName", "(*) Tên sản phẩm đã tồn tại", result);
-    });
+    if (isAdd) {
+        getListProduct()
+            .then(function (result) {
+                isValue &= validation.checkEmpty(name, "errorName", "(*) Vui lòng nhập tên sản phẩm") && validation.checkExistName(name, "errorName", "(*) Tên sản phẩm đã tồn tại", result);
+            });
+    }
     isValue &= validation.checkEmpty(price, "errorPrice", "(*) Vui lòng nhập giá sản phẩm") && validation.CheckNumber(price, "errorPrice", "(*) Giá sản phẩm vui lòng nhập số");
     isValue &= validation.checkEmpty(image, "errorImage", "(*) Vui lòng thêm ảnh");
     isValue &= validation.checkEmpty(screen, "errorScreen", "(*) Vui lòng nhập kích thước màn hình");
@@ -30,7 +56,7 @@ function checkValidation() {
     isValue &= validation.checkEmptyOption("typePhone", "errorTypePhone", "(*) Vui lòng nhập loại sản phẩm");
     isValue &= validation.checkEmpty(describe, "errorDescribe", "(*) Vui lòng nhập mô tả");
     return isValue;
-  }
+}
 // xóa input
 function clearInput(name, price, image, screen, backCamera, frontCamera, type, describe) {
     getEle(name).value = "";
@@ -43,7 +69,7 @@ function clearInput(name, price, image, screen, backCamera, frontCamera, type, d
     getEle(describe).value = "";
 }
 // xóa thông báo 
-function clearError(errorName, errorPrice, errorImage, errorScreen, errorbackCamera, errorfrontCamera ,errorTypePhone, errorDescribe) {
+function clearError(errorName, errorPrice, errorImage, errorScreen, errorbackCamera, errorfrontCamera, errorTypePhone, errorDescribe) {
     hiddenError(errorName);
     hiddenError(errorPrice);
     hiddenError(errorImage);
