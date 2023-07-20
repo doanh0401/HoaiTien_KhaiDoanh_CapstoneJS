@@ -90,17 +90,17 @@
             <th>Chọn</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody id="gioHang">
           <tr>
             <td class="d-flex align-items-center"><img src="./img/iphone-11-promax-xanh-ht-mobile.png" width="70px" alt="">Iphone 11</td>
             <td><p><span>160.000</span><sup>đ</sup></p></td>
-            <td><input style="width: 30px; outline: none;" type="number" min="0"></td>
+            <td><input style="width: 30px; outline: none;" type="number" min="1" value="1"></td>
             <td style="cursor: pointer;">Xóa</td>
           </tr>
           <tr>
             <td class="d-flex align-items-center"><img src="./img/iphone-x-64gb-hh-600x600.png" width="70px" alt="">Iphone X</td>
             <td><p><span>160.000</span><sup>đ</sup></p></td>
-            <td><input style="width: 30px; outline: none;" type="number" min="1"></td>
+            <td><input style="width: 30px; outline: none;" type="number" min="1" value="1" onchange=""></td>
             <td style="cursor: pointer;">Xóa</td>
           </tr>
         </tbody>
@@ -108,7 +108,7 @@
       <div style="text-align:right" id="total">
         <p style="font-weight: bold">Tổng tiền:<span>320.000</span><sup>đ</sup></p>
       </div>
-      <button>Thanh toán</button>
+      <button id="pay" onclick="total()">Thanh toán</button>
     </form>
   </section>
   <section class="product_section">
@@ -323,11 +323,11 @@
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
     ></script>
-
-    <script src="./customer/models/product.js"></script>
     <script src="./customer/services/api.js"></script>
+    <script src="./customer/models/cart.js"></script>
+    <script src="./customer/models/cartitem.js"></script>
+    <script src="./customer/models/product.js"></script>
     <script src="./customer/controller/index.js"></script>
-  <script src="./js/main.js"></script>
 </body>
 
 </html>
