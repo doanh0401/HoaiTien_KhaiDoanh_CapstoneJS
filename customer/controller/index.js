@@ -1,6 +1,6 @@
 var api = new Service();
 var cart = new Cart();
-var cartitem = new CartItem();
+let btn;
 function getEle(id) {
    return document.getElementById(id);
 }
@@ -13,11 +13,12 @@ function getListProduct() {
          var inputTypeProduct =  getEle("productType").value;
          if (inputTypeProduct !== "All") {
             renderUI(filterProducts(result.data, inputTypeProduct));
-            let btn = document.querySelectorAll(".buyBtn");
+            let temp = document.querySelectorAll(".buyBtn");
+            saveBtn(temp);
          } else {
             renderUI(result.data);
-            let btn = document.querySelectorAll(".buyBtn");
-            putItemIntoCart(btn);
+            let temp = document.querySelectorAll(".buyBtn");
+            saveBtn(temp);
          }
          getEle("loader").style.display = "none";
       })
@@ -49,9 +50,9 @@ function renderUI(data) {
         </div>
         <div class="btn_main">
           <div class="btn_buy d-flex justify-content-between">
-            <button class="buyBtn btn btn-dark">BUY NOW</button>
+            <button class="buyBtn btn btn-dark" onclick="putItemIntoCart()">BUY NOW</button>
             <div>
-              <h4 class="price_text">Price ${product.price}</h4>
+              <h4 class="price_text">Price <span class="price_number">${product.price}</span></h4>
             </div>
           </div>
         </div>
@@ -72,14 +73,32 @@ function filterProducts (data, filter) {
    }
    return array;
 }
-function putItemIntoCart(btn){
-   btn.forEach(function(button,index){
+function saveBtn(temp){
+  btn = temp;
+}
+function putItemIntoCart(){
+  var index = -1;
+   btn.forEach(function(button){
    button.addEventListener("click",function(event){
    var btnItem = event.target;
    var product = (btnItem.parentElement).parentElement.parentElement;
-   console.log(product);
-   var productImg = product.querySelector("img");
-   console.log(productImg);
+   var productName = product.querySelector(".product_name").innerHTML;
+   index = cart.timViTri(productName);
+   console.log(cart);
+   if(index != -1){
+    console.log(index);
+    console.log(cart.arr[index].quantity);
+    cart.arr[index].quantity += 1;
+    renderCart(cart.arr);
+   }
+   else {
+    var productImg = product.querySelector("img").src;
+    var productQuantity = 1;
+    var productPrice = product.querySelector(".price_number").innerHTML;
+    var cartitem = new CartItem("",productName,productPrice,productImg,productQuantity);
+    cart.arr.push(cartitem);
+    renderCart(cart.arr);
+   }
 })
 })
 }
@@ -98,14 +117,6 @@ cartShow.addEventListener("click",function(){
 cartBtn.addEventListener("click",function(){
   document.getElementById("cart").style.right="-100%";
 })
-//Cart item
-function getEle(id){
-    return document.getElementById(id);
-}
-var api = new Service();
-function getEle(id) {
-   return document.getElementById(id);
-}
 //Hiển thị giỏ hàng
 function renderCart(data) {
     var content = "";
@@ -116,7 +127,7 @@ function renderCart(data) {
                 <tr>
                 <td class="d-flex align-items-center"><img src="${cartitem.img}" width="70px" alt="">${cartitem.name}</td>
                 <td><p><span id="price">${cartitem.price}</span><sup>$</sup></p></td>
-                <td><input id="quantity" style="width: 30px; outline: none;" type="number" min="1" value="${cartitem.quantity}" onchange="updateQuantity(${cartItem.name})"></td>
+                <td><input id="quantity" style="width: 30px; outline: none;" type="number" min="1" value="${cartitem.quantity}" onchange="updateQuantity(${cartitem.name})"></td>
                 <td style="cursor: pointer;">Xóa</td>
               </tr>`
     }
