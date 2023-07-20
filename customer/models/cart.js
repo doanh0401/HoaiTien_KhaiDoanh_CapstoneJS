@@ -3,15 +3,14 @@ function Cart () {
     this.themGH = function (cartitem) {
         this.arr.push(cartitem);
     };
-    this.timViTri = function (keyword) {
-        var mangTimKiem = [];
-        for(var i =0;i<this.arr.length;i++){
-        var cartitem = this.arr[i];
-        if(cartitem.name.toLowerCase().indexOf(keyword.toLowerCase()) !== -1){
-        mangTimKiem.push(cartitem);
+    this.timViTri = function (name) {
+        var index = -1;
+        for (let i = 0; i < this.arr.length; i++) {
+        if (String(name) === this.arr[i].name) {
+        index = i;
+      }
     }
-  }
-  return mangTimKiem;
+    return index;
     };
     this.xoaGh = function (id) {
         var index = this.timViTri(id);
