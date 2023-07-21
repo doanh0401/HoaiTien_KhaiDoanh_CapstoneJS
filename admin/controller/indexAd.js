@@ -49,7 +49,7 @@ function renderTable(data) {
         <tr>
             <td>${i + 1} </td>
             <td>${product.name} </td>
-            <td>${product.price} </td>
+            <td>$${product.price} </td>
             <td><img src="../img/${product.img}" width="50" alt=""</td>
             <td>${product.screen} </td>
             <td>${product.backCamera}</td>
@@ -65,6 +65,7 @@ function renderTable(data) {
     `
   }
   getEle("tblDanhSachSP").innerHTML = content;
+  return content;
 }
 // hàm thêm button addProduct
 function addBtnProduct() {
@@ -83,19 +84,25 @@ function addProduct() {
   var frontCamera = getEle("frontCamera").value;
   var type = getEle("typePhone").value;
   var describe = getEle("MoTa").value;
-
   if (checkValidation(true)) {
-    var product = new Product("", name, price, image, screen, backCamera, frontCamera, describe, type);
-    var promise = api.addProductApi(product);
-    promise
-      .then(function (results) {
-        getListProduct();
-        document.querySelector(".close").click();
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }
+      getListProduct()
+          .then(function (result) {
+              isValue = validation.checkExistName(name, "errorName", "(*) Tên sản phẩm đã tồn tại", result);  
+              if (isValue) {
+                var product = new Product("", name, price, image, screen, backCamera, frontCamera, describe, type);
+                var promise = api.addProductApi(product);
+                promise
+                  .then(function (results) {
+                    getListProduct();
+                    document.querySelector(".close").click();
+                  })
+                  .catch(function (error) {
+                    console.log(error);
+                  });
+              }       
+            });            
+         
+          }
 }
 // hàm xóa sản phẩm
 function delProduct(id) {
@@ -112,10 +119,10 @@ function delProduct(id) {
     })
     document.getElementById("confirmation-popup").style.display = "none";
   });
-  document.getElementById("cancel-button").addEventListener("click", function() {
-    document.getElementById("confirmation-popup").style.display = "none";
-  });
 }
+document.getElementById("cancel-button").addEventListener("click", function() {
+  document.getElementById("confirmation-popup").style.display = "none";
+});
 // hàm sửa sản phẩm 
 function editProduct(id) {
   document.querySelector(".modal-title").innerHTML = "Edit Product";
