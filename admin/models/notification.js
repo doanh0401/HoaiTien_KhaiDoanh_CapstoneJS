@@ -42,14 +42,14 @@ function checkValidation(isAdd) {
     var type = getEle("typePhone").value;
     var describe = getEle("MoTa").value;
     let isValue = true;
-    isValue = validation.checkEmpty(name, "errorName", "(*) Vui lòng nhập tên sản phẩm");
-    isValue = validation.checkEmpty(price, "errorPrice", "(*) Vui lòng nhập giá sản phẩm") && validation.CheckNumber(price, "errorPrice", "(*) Giá sản phẩm vui lòng nhập số");
-    isValue = validation.checkEmpty(image, "errorImage", "(*) Vui lòng thêm ảnh");
-    isValue = validation.checkEmpty(screen, "errorScreen", "(*) Vui lòng nhập kích thước màn hình");
-    isValue = validation.checkEmpty(backCamera, "errorbackCamera", "(*) Vui lòng nhập thông tin camera sau");
-    isValue = validation.checkEmpty(frontCamera, "errorfrontCamera", "(*) Vui lòng nhập thông tin camera trước");
-    isValue = validation.checkEmptyOption("typePhone", "errorTypePhone", "(*) Vui lòng nhập loại sản phẩm");
-    isValue = validation.checkEmpty(describe, "errorDescribe", "(*) Vui lòng nhập mô tả");
+    isValue &= validation.checkEmpty(name, "errorName", "(*) Vui lòng nhập tên sản phẩm");
+    isValue &= validation.checkEmpty(price, "errorPrice", "(*) Vui lòng nhập giá sản phẩm") && validation.CheckNumber(price, "errorPrice", "(*) Giá sản phẩm vui lòng nhập số");
+    isValue &= validation.checkEmpty(image, "errorImage", "(*) Vui lòng thêm ảnh");
+    isValue &= validation.checkEmpty(screen, "errorScreen", "(*) Vui lòng nhập kích thước màn hình");
+    isValue &= validation.checkEmpty(backCamera, "errorbackCamera", "(*) Vui lòng nhập thông tin camera sau");
+    isValue &= validation.checkEmpty(frontCamera, "errorfrontCamera", "(*) Vui lòng nhập thông tin camera trước");
+    isValue &= validation.checkEmptyOption("typePhone", "errorTypePhone", "(*) Vui lòng nhập loại sản phẩm");
+    isValue &= validation.checkEmpty(describe, "errorDescribe", "(*) Vui lòng nhập mô tả");
     return isValue;
 }
 // xóa input

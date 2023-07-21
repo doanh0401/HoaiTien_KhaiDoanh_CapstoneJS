@@ -73,6 +73,7 @@ function addBtnProduct() {
   document.querySelector(".modal-footer").innerHTML = `<button onclick="addProduct()" class="btn btn-success">Add</button>`
   clearInput("TenSP", "GiaSP", "HinhSP", "screen", "backCamera", "frontCamera", "typePhone", "MoTa");
   clearError("errorName", "errorPrice", "errorImage", "errorScreen", "errorbackCamera", "errorfrontCamera", "errorTypePhone", "errorDescribe");
+  getEle("TenSP").disabled = false;
 }
 // hàm thêm product
 function addProduct() {
@@ -127,6 +128,7 @@ document.getElementById("cancel-button").addEventListener("click", function() {
 function editProduct(id) {
   document.querySelector(".modal-title").innerHTML = "Edit Product";
   document.querySelector(".modal-footer").innerHTML = `<button onclick="updateProduct(${id})" class="btn btn-warning">Update</button>`;
+  getEle("TenSP").disabled = true;
   var promise = api.getProductApiById(id);
   promise
     .then(function (results) {
