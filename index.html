@@ -42,7 +42,7 @@
             <a class="nav-link" href="#"><i class="fa-solid fa-users"></i><br>About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link cart-drawer" style="position:relative;" href="#"><i class="fa-solid fa-cart-shopping fa-2"></i><br>Cart
+            <a class="nav-link cart-drawer" style="position:relative;" href="#" id="cartToggle"><i class="fa-solid fa-cart-shopping fa-2"></i><br>Cart
               <div id="cart-item-count">1</div>
             </a>
           </li>
@@ -81,7 +81,7 @@
     <div class="close"><i class="fas fa-times"></i></div>
     <h2>Shopping cart</h2>
     <form action="">
-      <table>
+      <table id="cartTable">
         <thead>
           <tr>
             <th>Sản phẩm</th>
@@ -91,23 +91,11 @@
           </tr>
         </thead>
         <tbody id="gioHang">
-          <tr>
-            <td class="d-flex align-items-center"><img src="./img/iphone-11-promax-xanh-ht-mobile.png" width="70px" alt="">Iphone 11</td>
-            <td><p><span>160.000</span><sup>đ</sup></p></td>
-            <td><input style="width: 30px; outline: none;" type="number" min="1" value="1"></td>
-            <td style="cursor: pointer;">Xóa</td>
-          </tr>
-          <tr>
-            <td class="d-flex align-items-center"><img src="./img/iphone-x-64gb-hh-600x600.png" width="70px" alt="">Iphone X</td>
-            <td><p><span>160.000</span><sup>đ</sup></p></td>
-            <td><input style="width: 30px; outline: none;" type="number" min="1" value="1" onchange=""></td>
-            <td style="cursor: pointer;">Xóa</td>
-          </tr>
         </tbody>
       </table>
       <div style="text-align:right" id="total">
-        <p style="font-weight: bold">Tổng tiền:<span>320.000</span><sup>đ</sup></p>
       </div>
+      <p id="empty"></p>
       <button id="pay" onclick="total()">Thanh toán</button>
     </form>
   </section>
