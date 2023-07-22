@@ -77,6 +77,8 @@ function saveBtn(temp) {
   btn = temp;
 }
 function putItemIntoCart(name) {
+  getEle("cartTable").style.display = "block";
+  getEle("total").style.display = "block";
   const index = cart.timViTri(name);
   console.log(index);
   if (index === -1) {
@@ -95,12 +97,13 @@ function putItemIntoCart(name) {
           productQuantity
         );
         cart.arr.push(cartitem);
-        renderCart(cart.arr);
+        renderCart();
+        setLocalStorage();
       }
     }
   } else {
     cart.arr[index].quantity += 1;
-    renderCart(cart.arr);
+    renderCart();
   }
 }
 //Cart display
@@ -119,13 +122,12 @@ cartBtn.addEventListener("click", function () {
   document.getElementById("cart").style.right = "-100%";
 });
 //Hiển thị giỏ hàng
-function renderCart(data) {
+function renderCart() {
   var content = "";
   let total = 0;
-  console.log(data.length);
-  if (data.length !== 0) {
-    for (var i = 0; i < data.length; i++) {
-      var cartitem = data[i];
+  if (cart.arr.length !== 0) {
+    for (var i = 0; i < cart.arr.length; i++) {
+      var cartitem = cart.arr[i];
       content += `<tr>
                 <tr>
                 <td class="d-flex align-items-center"><img src="${cartitem.img}" width="70px" alt="">${cartitem.name}</td>
@@ -139,17 +141,37 @@ function renderCart(data) {
     getEle("total").innerHTML = `Tổng tiền: ${total}<sup>$</sup>`;
   } else {
     getEle("cartTable").style.display = "none";
+    getEle("total").style.display = "none";
   }
 }
 //Tính tổng tiền
 function total() {
   alert("Cảm ơn bạn đã mua hàng <3");
   cart.arr = [];
-  renderCart(cart.arr);
+  renderCart();
+  setLocalStorage();
 }
 function updateQuantity(name) {}
 //Xoá khỏi giỏ hàng
 function XoaSP(name) {
   cart.xoaGh(name);
-  renderCart(cart.arr);
+  renderCart();
+  setLocalStorage();
+}
+function setLocalStorage (){
+  var dataToString = JSON.stringify(cart.arr);
+  localStorage.setItem("Cart", dataToString);
+}
+function getLocalStorage() {
+  if (localStorage.getItem("Cart")) {
+    var dataString = localStorage.getItem("Cart");
+    var dataJSON = JSON.parse(dataString);
+    cart.arr = dataJSON;
+    //render lai Table
+    renderCart();
+  }
+}
+window.onload = function () {
+  getLocalStorage();
+  renderCart();
 }
