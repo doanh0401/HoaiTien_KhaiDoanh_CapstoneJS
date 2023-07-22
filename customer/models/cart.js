@@ -8,12 +8,13 @@ function Cart () {
         for (let i = 0; i < this.arr.length; i++) {
         if (String(name) === this.arr[i].name) {
         index = i;
+        break;
       }
     }
     return index;
     };
-    this.xoaGh = function (id) {
-        var index = this.timViTri(id);
+    this.xoaGh = function (name) {
+        var index = this.timViTri(name);
         if(index !== -1) {
             this.arr.splice(index,1);
         }
