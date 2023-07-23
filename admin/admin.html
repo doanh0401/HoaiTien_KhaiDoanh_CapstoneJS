@@ -106,7 +106,7 @@
       <!--Danh sách sản phẩm -->
       <div role="tabpanel" class="tab-pane in active" id="DanhSachSP">
         <div class="row">
-          <div class="col-md-2">
+          <div class="col-md-3">
             <!-- BEGIN BUTTOM THÊM MỚI -->
             <button onclick="addBtnProduct()" id="btnThemSP" class="btn btn-success" data-toggle="modal"
               data-target="#myModal">
@@ -115,8 +115,8 @@
             </button>
             <!-- END BUTTON THÊM MỚI -->
           </div>
-          <div class="col-md-4"></div>
-          <div class="col-md-2">
+          <div class="col-md-2"></div>
+          <div class="col-md-3">
             <select name="" id="productType" class="form-control" >
                 <option value="All">Sản phẩm mới</option>
                 <option value="giaCao">Giá từ thấp đến cao</option>
@@ -182,44 +182,60 @@
           </div>
           <!-- Modal body -->
           <div class="modal-body">
-            <div class="form-group">
-              <label>Name</label>
-              <input id="TenSP" class="form-control" placeholder="Nhập vào tên sản phẩm" />
-              <span class="sp-thongbao" id="errorName"></span>
-            </div>
-            <div class="form-group">
-              <label>Price</label>
-              <input id="GiaSP" class="form-control" placeholder="Nhập vào giá" />
-              <span class="sp-thongbao" id="errorPrice"></span>
-            </div>
-            <div class="form-group">
-              <label>Image</label>
-              <input id="HinhSP" class="form-control" placeholder="Nhập vào hình sản phẩm" />
-              <span class="sp-thongbao" id="errorImage"></span>
-            </div>
-            <div class="form-group">
-              <label>Screen</label>
-              <input id="screen" class="form-control" placeholder="Nhập vào kích thước màn hình" />
-              <span class="sp-thongbao" id="errorScreen"></span>
-            </div>
-            <div class="form-group">
-              <label>Backcamera</label>
-              <input id="backCamera" class="form-control" placeholder="Nhập vào camera sau" />
-              <span class="sp-thongbao" id="errorbackCamera"></span>
-            </div>
-            <div class="form-group">
-              <label>FrontCamera</label>
-              <input id="frontCamera" class="form-control" placeholder="Nhập vào camera trước" />
-              <span class="sp-thongbao" id="errorfrontCamera"></span>
-            </div>
-            <div class="form-group">
-              <label for="Phone">Chọn loại sản phẩm:</label>
-              <select class="form-control" name="Phone" id="typePhone">
-                <option value="0">Chọn loại sản phẩm</option>
-                <option value="Samsung">Samsung</option>
-                <option value="Iphone">Iphone</option>
-              </select>
-            <span class="sp-thongbao" id="errorTypePhone"></span>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                  <label>Name</label>
+                  <input id="TenSP" class="form-control" placeholder="Nhập vào tên sản phẩm" />
+                  <span class="sp-thongbao" id="errorName"></span>
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                  <label>Price</label>
+                  <input id="GiaSP" class="form-control" placeholder="Nhập vào giá" />
+                  <span class="sp-thongbao" id="errorPrice"></span>
+                </div>               
+              </div>
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                  <label>Image</label>
+                  <input id="HinhSP" class="form-control" placeholder="Nhập vào hình sản phẩm" />
+                  <span class="sp-thongbao" id="errorImage"></span>
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                  <label>Screen</label>
+                  <input id="screen" class="form-control" placeholder="Nhập kích thước màn hình" />
+                  <span class="sp-thongbao" id="errorScreen"></span>
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                  <label>Backcamera</label>
+                  <input id="backCamera" class="form-control" placeholder="Nhập vào camera sau" />
+                  <span class="sp-thongbao" id="errorbackCamera"></span>
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                  <label>FrontCamera</label>
+                  <input id="frontCamera" class="form-control" placeholder="Nhập vào camera trước" />
+                  <span class="sp-thongbao" id="errorfrontCamera"></span>
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                  <label for="Phone">Chọn loại sản phẩm:</label>
+                  <select class="form-control" name="Phone" id="typePhone">
+                    <option value="0">Chọn loại sản phẩm</option>
+                    <option value="Samsung">Samsung</option>
+                    <option value="Iphone">Iphone</option>
+                  </select>
+                <span class="sp-thongbao" id="errorTypePhone"></span>
+              </div>
+              </div>
             </div>
             <div class="form-group">
               <label for="">Describe: </label>
