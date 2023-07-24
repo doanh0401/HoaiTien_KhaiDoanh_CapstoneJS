@@ -31,7 +31,7 @@ function renderUI(data) {
   for (var i = 0; i < data.length; i++) {
     var product = data[i];
     content += `
-      <div class="col-lg-3 col-sm-6">
+      <div class="col-12 col-lg-3 col-sm-6">
       <div class="product_box">
         <div class="product_content">
           <h2 class="product_name">${product.name}</h2>

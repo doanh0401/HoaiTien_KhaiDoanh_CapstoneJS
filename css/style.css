@@ -114,6 +114,10 @@ html, body {
   font-size: 1.8rem;
 }
 
+.product_content {
+  margin: 0;
+}
+
 .product_box {
   width: 100%;
   background-color: #fff;
@@ -190,10 +194,6 @@ html, body {
   color: #fff;
   transform: translateY(20px);
   transition: all 0.5s;
-}
-
-.search_product {
-  padding: 0;
 }
 
 #cart {
