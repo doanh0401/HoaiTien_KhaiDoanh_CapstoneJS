@@ -1,0 +1,113 @@
+.bg0 {
+  background-color: #fff;
+}
+.mb-50 {
+  margin-bottom: 50px;
+}
+.ml-25 {
+  margin-left: 25px;
+}
+.mr-38 {
+  margin-right: 38px;
+}
+.cl8 {
+  color: $color-txt2;
+}
+.cl3 {
+  color: #666;
+}
+@media (max-width: 1199px) {
+  .m-lr-0-xl {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+form {
+  padding: $pd-75 0;
+}
+.wrap-table-shopping-cart {
+  overflow: auto;
+  border-left: 1px solid $bc-1;
+  border-right: 1px solid $bc-1;
+  .table-shopping-cart {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 680px;
+    tr {
+      border-top: 1px solid $bc-1;
+      border-bottom: 1px solid $bc-1;
+    }
+    .table_head th {
+      @include style-text($fs-1, $fw-2, $color-txt2);
+      text-transform: uppercase;
+      line-height: 1.6;
+      padding: $pd-11 0;
+    }
+    .column-1 {
+      width: 133px;
+      padding-left: 50px !important;
+    }
+    .column-2 {
+      width: 220px;
+    }
+    .column-3 {
+      width: 120px;
+    }
+    .column-4 {
+      width: 145px;
+      text-align: center;
+    }
+    .column-5 {
+      width: 172px;
+      padding-right: 50px !important;
+      text-align: right;
+      font-size: 16px;
+    }
+    .table_row {
+      height: 185px;
+      td {
+        padding-bottom: 20px;
+      }
+      td.column-1 {
+        padding-bottom: 30px;
+      }
+      .wrap-num-product {
+        width: 140px;
+        height: 45px;
+        border: 1px solid #e6e6e6;
+        border-radius: 3px;
+        overflow: hidden;
+      }
+      .btn-num-product-up,
+      .btn-num-product-down {
+        width: 45px;
+        height: 100%;
+        cursor: pointer;
+        transition: all 0.4s;
+      }
+      .flex-c-m {
+        justify-content: center;
+        align-items: center;
+      }
+      .hov-btn3:hover {
+        border-color: #717fe0;
+        background-color: #717fe0;
+        color: #fff;
+      }
+      .num-product {
+        width: calc(100% - 90px);
+        height: 100%;
+        border-left: 1px solid #e6e6e6;
+        border-right: 1px solid #e6e6e6;
+        border-top: none;
+        border-bottom: none;
+        background-color: #f7f7f7;
+      }
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
+  }
+}
