@@ -6,7 +6,9 @@
         font-size: $fs-3;
     }
 }
-
+.product_content {
+    margin: 0;
+}
 .product_box {
     width: 100%;
     background-color: $color-white;
@@ -89,7 +91,4 @@
         transform: translateY(20px);
         transition: all 0.5s;
     }
-}
-.search_product {
-    padding: 0;
 }
