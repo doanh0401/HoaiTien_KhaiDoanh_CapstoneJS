@@ -192,6 +192,10 @@ html, body {
   transition: all 0.5s;
 }
 
+.search_product {
+  padding: 0;
+}
+
 #cart {
   position: fixed;
   height: 100vh;
