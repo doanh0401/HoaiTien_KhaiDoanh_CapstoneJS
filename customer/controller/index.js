@@ -105,6 +105,7 @@ function putItemIntoCart(name) {
     cart.arr[index].quantity += 1;
     renderCart();
   }
+  countItem();
 }
 //Cart display
 let toggle = false;
@@ -132,8 +133,8 @@ function renderCart() {
                 <tr>
                 <td class="d-flex align-items-center"><img src="${cartitem.img}" width="70px" alt="">${cartitem.name}</td>
                 <td><p><span id="price">${cartitem.price}</span><sup>$</sup></p></td>
-                <td><input id="quantity" style="width: 30px; outline: none;" type="number" min="1" value="${cartitem.quantity}" onchange="updateQuantity(${cartitem.name})"></td>
-                <td style="cursor: pointer;" onclick="XoaSP('${cartitem.name}')">Xóa</td>
+                <td style="padding-bottom:1.7rem;">${cartitem.quantity}</td>
+                <td style="cursor: pointer;padding-bottom:1.7rem;" onclick="XoaSP('${cartitem.name}')">Xóa</td>
               </tr>`;
       total += parseInt(cartitem.price) * cartitem.quantity;
     }
@@ -142,6 +143,7 @@ function renderCart() {
   } else {
     getEle("cartTable").style.display = "none";
     getEle("total").style.display = "none";
+    getEle("cart-item-count").style.display = "none";
   }
 }
 //Tính tổng tiền
@@ -151,7 +153,6 @@ function total() {
   renderCart();
   setLocalStorage();
 }
-function updateQuantity(name) {}
 //Xoá khỏi giỏ hàng
 function XoaSP(name) {
   cart.xoaGh(name);
@@ -174,4 +175,14 @@ function getLocalStorage() {
 window.onload = function () {
   getLocalStorage();
   renderCart();
+}
+function countItem() {
+  let count = 0;
+  console.log(cart.arr);
+  for(let i=0; i<cart.arr.length;i++){
+    var cartitem = cart.arr[i];
+    count += cartitem.quantity;
+  }
+  getEle("cart-item-count").style.display = "block";
+  getEle("cart-item-count").innerHTML = count;
 }
