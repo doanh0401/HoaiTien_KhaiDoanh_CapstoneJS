@@ -126,6 +126,7 @@ cartBtn.addEventListener("click", function () {
 function renderCart() {
   var content = "";
   let total = 0;
+  let totalItem = 0;
   if (cart.arr.length !== 0) {
     for (var i = 0; i < cart.arr.length; i++) {
       var cartitem = cart.arr[i];
