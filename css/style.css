@@ -124,6 +124,7 @@ html, body {
   height: auto;
   border: 1px solid #7d7d7c;
   margin-top: 30px;
+  border-radius: 10px;
 }
 .product_box .product_content {
   position: relative;
@@ -154,6 +155,8 @@ html, body {
   background-color: #888;
   padding: 15px 10px;
   align-items: center;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 .btn_buy .btn-dark {
   font-size: 14px;
@@ -182,6 +185,8 @@ html, body {
   top: 0;
   opacity: 0;
   transition: all 0.5s;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 }
 .product_overlay:hover .overlay_text {
   transform: translateY(0);
@@ -202,7 +207,7 @@ html, body {
   width: 400px;
   right: 0;
   top: 94px;
-  background-color: rgb(221, 195, 195);
+  background-color: rgb(170, 170, 170);
   z-index: 5;
   margin: auto;
   text-align: center;

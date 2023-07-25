@@ -15,6 +15,7 @@
     height: auto;
     border: 1px solid $color-border-1;
     margin-top: $mg-1;
+    border-radius: 10px;
     .product_content {
         position: relative;
         &:hover {
@@ -49,7 +50,8 @@
     background-color: $color-grey;
     padding: $pd-11 $pd-10 ;
     align-items: center;
-
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
     .btn-dark {
         @include style-text($fs-1, $fw-2, $color-white);
         padding: $pd-6 $pd-10;
@@ -77,6 +79,8 @@
     top: 0;
     opacity: 0;
     transition: all 0.5s;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
     &:hover {
         .overlay_text {
         transform: translateY(0);
