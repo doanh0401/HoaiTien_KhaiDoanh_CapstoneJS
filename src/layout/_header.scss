@@ -30,7 +30,10 @@ header {
     border: 0.125rem solid $color-txt;
     color: $color-txt;
     background-color: #fff;
-    right: 1.125rem;
+    right: 47%;
+    @media(min-width: 768px){
+      right: 1.125rem;
+    }
     top: -0.1rem;
     font-size: $fs-1;
     margin-right: -0.875rem;

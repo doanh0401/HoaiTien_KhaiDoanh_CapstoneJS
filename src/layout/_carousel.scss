@@ -15,4 +15,10 @@
         @include style-text($fs-2,$fw-1,$color-dark-1);
         margin-bottom: $mg-2;
     }
+    #outerimg{ display: none};
+    #innerimg{ display: block};
+    @media (min-width: 768px) {
+        #outerimg{ display: block};
+        #innerimg{ display: none};
+    }
 }
