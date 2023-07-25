@@ -36,7 +36,7 @@ function renderUI(data) {
         <div class="product_content">
           <h2 class="product_name">${product.name}</h2>
           <p class="product_intro">${product.desc}</p>
-          <img src="./img/${product.img}" class="img_product" alt="">
+          <img src="../../img/${product.img}" class="img_product" alt="">
           <div class="product_overlay">
             <div class="overlay_text">
               <p>Screen: ${product.screen} "</p>
@@ -50,7 +50,7 @@ function renderUI(data) {
           <div class="btn_buy d-flex justify-content-between">
             <button class="buyBtn btn btn-dark" onclick="putItemIntoCart('${product.name}')">BUY NOW</button>
             <div>
-              <h4 class="price_text">Price <span class="price_number">${product.price}</span></h4>
+              <h4 class="price_text">Price <span class="price_number">$${product.price}</span></h4>
             </div>
           </div>
         </div>
@@ -132,7 +132,7 @@ function renderCart() {
       var cartitem = cart.arr[i];
       content += `<tr>
                 <tr>
-                <td class="d-flex align-items-center"><img src="${cartitem.img}" width="70px" alt="">${cartitem.name}</td>
+                <td class="d-flex align-items-center"><img src="../.${cartitem.img}" width="70px" alt="">${cartitem.name}</td>
                 <td><p><span id="price">${cartitem.price}</span><sup>$</sup></p></td>
                 <td style="padding-bottom:1.7rem;">${cartitem.quantity}</td>
                 <td style="cursor: pointer;padding-bottom:1.7rem;" onclick="XoaSP('${cartitem.name}')">Xóa</td>
