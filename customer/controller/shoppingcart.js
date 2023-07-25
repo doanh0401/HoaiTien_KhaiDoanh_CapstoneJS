@@ -50,9 +50,8 @@ function renderCart() {
     }
       getEle("tableCart").innerHTML = content;
       getEle("total").innerHTML = `$${total}`;
-      getEle("cart-item-count").innerHTML = countItem;
+      getEle("cart-item-count").innerHTML = totalItem;
   } else {
-    //   getEle("cartTable").style.display = "none";
         getEle("total").innerHTML = `$0`;
         getEle("cart-item-count").style.display = "none";
   }
