@@ -138,7 +138,9 @@ function renderCart() {
                 <td style="cursor: pointer;padding-bottom:1.7rem;" onclick="XoaSP('${cartitem.name}')">Xóa</td>
               </tr>`;
       total += parseInt(cartitem.price) * cartitem.quantity;
+      totalItem += cartitem.quantity;
     }
+    getEle("cart-item-count").innerHTML = totalItem
     getEle("gioHang").innerHTML = content;
     getEle("total").innerHTML = `Tổng tiền: ${total}<sup>$</sup>`;
   } else {
