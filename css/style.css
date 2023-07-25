@@ -212,7 +212,7 @@ html, body {
 }
 .product_overlay .overlay_text {
   position: absolute;
-  bottom: 5rem;
+  bottom: 4rem;
   left: 1rem;
   font-size: 1.1rem;
   color: #fff;
@@ -220,6 +220,18 @@ html, body {
   transition: all 0.5s;
 }
 
+@media screen and (min-width: 991.98px) and (max-width: 1199.8px) {
+  .product_box .product_name {
+    font-size: 18px;
+  }
+  .product_overlay .overlay_text {
+    bottom: 3rem;
+  }
+  .product_overlay .overlay_text p {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+}
 #cart {
   position: fixed;
   height: 100vh;

@@ -88,7 +88,7 @@
     }
     .overlay_text {
         position: absolute;
-        bottom: 5rem;
+        bottom: 4rem;
         left: 1rem;
         font-size: $fs-2;
         color: #fff;
@@ -96,3 +96,15 @@
         transition: all 0.5s;
     }
 }
+@media screen and (min-width: 991.98px) and (max-width: 1199.8px) {
+    .product_box .product_name {
+        font-size: 18px;
+    }
+    .product_overlay .overlay_text {
+        bottom: 3rem;
+        p {
+            margin-bottom: $mg-6;
+            font-size: $fs-10;
+        }
+    }
+  }
