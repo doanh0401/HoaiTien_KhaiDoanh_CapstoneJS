@@ -43,7 +43,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link cart-drawer" style="position:relative;" href="#" id="cartToggle"><i class="fa-solid fa-cart-shopping fa-2"></i><br>Cart
-              <div id="cart-item-count"></div>
+              <div style="color:#787878" id="cart-item-count"></div>
             </a>
           </li>
         </ul>
@@ -62,6 +62,8 @@
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star checked"></span>
             <span class="fa-solid fa-star-half-stroke checked"></span>
+            <br>
+            <img id="innerimg" src="../../img/samsung-galaxy-s23.jpg" height="400px"  alt=""> 
             <h3>Best Smartphone of 2022!</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores pariatur nulla minus aliquid, excepturi
               quam blanditi is</p>
@@ -71,7 +73,7 @@
             </div>
           </div>
         </div>
-        <div class="col-6 d-md-block d-none">
+        <div id="outerimg" class="col-6 d-md-block d-none">
           <img src="../../img/samsung-galaxy-s23.jpg" alt="">
         </div>
       </div>
@@ -80,8 +82,10 @@
   <section id="cart">
     <div class="close"><i class="fas fa-times"></i></div>
     <h2>Shopping cart</h2>
-    <img src="../../img/cart-empty-1.png" width="100%" alt="">
-    <p style="color: #252525; font-size: 20px; font-weight: 600;">Your Cart Is Empty</p>
+    <div id="empty" style="display:none">
+      <img src="../../img/cart-empty-1.png" width="100%" alt="">
+      <p style="color: #252525; font-size: 20px; font-weight: 600;">Your Cart Is Empty</p>
+    </div>
     <form action="">
       <table id="cartTable">
         <thead>
@@ -97,7 +101,6 @@
       </table>
       <div style="text-align:right" id="total">
       </div>
-      <p id="empty"></p>
       <button id="pay" onclick="total()">Thanh toán</button>
       <button><a style="text-decoration: none;color:white;"href="./shoppingcart.html">View Cart</a></button>
     </form>

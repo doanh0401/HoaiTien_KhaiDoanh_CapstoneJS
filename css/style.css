@@ -36,10 +36,15 @@ header #cart-item-count {
   border: 0.125rem solid #D6D6D6;
   color: #D6D6D6;
   background-color: #fff;
-  right: 1.125rem;
+  right: 47%;
   top: -0.1rem;
   font-size: 14px;
   margin-right: -0.875rem;
+}
+@media (min-width: 768px) {
+  header #cart-item-count {
+    right: 1.125rem;
+  }
 }
 
 * {
@@ -75,6 +80,20 @@ html, body {
   font-weight: 400;
   color: #656774 !important;
   margin-bottom: 25px;
+}
+.phoneCarousel #outerimg {
+  display: none;
+}
+.phoneCarousel #innerimg {
+  display: block;
+}
+@media (min-width: 768px) {
+  .phoneCarousel #outerimg {
+    display: block;
+  }
+  .phoneCarousel #innerimg {
+    display: none;
+  }
 }
 
 .custom-loader {
@@ -218,12 +237,17 @@ html, body {
   height: 100vh;
   width: 400px;
   right: 0;
-  top: 94px;
+  top: 70px;
   background-color: rgb(170, 170, 170);
   z-index: 5;
   margin: auto;
   text-align: center;
   transition: all 0.1s ease;
+}
+@media (min-width: 768px) {
+  #cart {
+    top: 94px;
+  }
 }
 #cart h2 {
   margin: 30px 0;
@@ -366,7 +390,6 @@ html, body {
 
 .body_admin {
   background: #599fd9;
-  background: -webkit-linear-gradient(to right, #599fd9, #c2e59c);
   background: linear-gradient(to right, #599fd9, #c2e59c);
   min-height: 100vh;
   overflow-x: hidden;
@@ -817,4 +840,22 @@ html, body {
   width: 25%;
   height: 50px;
   min-width: 250px;
+}
+
+.bread-crumb a {
+  text-decoration: none;
+  transition: all 0.4s;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  line-height: 1.833333;
+}
+.bread-crumb a:hover {
+  color: #717fe0;
+}
+.bread-crumb span {
+  padding-left: 5px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  line-height: 1.833333;
+  color: #999;
 }/*# sourceMappingURL=style.css.map */

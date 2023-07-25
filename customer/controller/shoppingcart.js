@@ -24,7 +24,7 @@ function renderCart() {
       content += `<tr class="table_row">
         <td class="column-1">
             <div class="how-itemcart1">
-                <img src="${cartitem.img}" width="70px" alt="IMG">
+                <img src="../.${cartitem.img}" width="70px" alt="IMG">
             </div>
         </td>
         <td class="column-2">${cartitem.name}</td>
@@ -87,4 +87,12 @@ function Pay() {
     console.log(cart.arr);
     SaveData();
     alert("Cám ơn bạn đã mua sắm");
+}
+//Scroll header
+window.onscroll = function() {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+    document.getElementById("header").style.position="fixed";
+  } else {
+    document.getElementById("header").style.position="relative";
+  }
 }

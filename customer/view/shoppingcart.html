@@ -24,7 +24,7 @@
 </head>
 
 <body>
-	<header>
+	<header id="header">
 		<nav class="navbar navbar-expand-md navbar-dark container">
 			<!-- Brand -->
 			<a class="navbar-brand" href="#">Cyberphone</a>
@@ -46,7 +46,7 @@
 					<li class="nav-item">
 						<a class="nav-link cart-drawer" style="position:relative;" href="#" id="cartToggle"><i
 								class="fa-solid fa-cart-shopping fa-2"></i><br>Cart
-							<div id="cart-item-count"></div>
+							<div style="color:#787878" id="cart-item-count"></div>
 						</a>
 					</li>
 				</ul>
@@ -54,14 +54,14 @@
 		</nav>
 	</header>
 	<div class=container>
-		<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
-			<a href="./index.html" class="stext-109 cl8 hov-cl1 trans-04">
+		<div class="bread-crumb d-flex flex-wrap pl-4 pr-3 p-t-27 px-lg-0">
+			<a href="./product.html" class="cl8">
 				Home
 				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
 			</a>
 
 			<span class="stext-109 cl4">
-				Shoping Cart
+				 Shoping Cart
 			</span>
 		</div>
 	</div>
@@ -210,9 +210,9 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
 		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 		crossorigin="anonymous"></script>
-	<script src="./customer/models/cartitem.js"></script>
-	<script src="./customer/models/cart.js"></script>
-	<script src="./customer/controller/shoppingcart.js"></script>
+	<script src="../models/cartitem.js"></script>
+	<script src="../models/cart.js"></script>
+	<script src="../controller/shoppingcart.js"></script>
 </body>
 
 </html>
