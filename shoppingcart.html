@@ -46,7 +46,7 @@
 					<li class="nav-item">
 						<a class="nav-link cart-drawer" style="position:relative;" href="#" id="cartToggle"><i
 								class="fa-solid fa-cart-shopping fa-2"></i><br>Cart
-							<div id="cart-item-count">1</div>
+							<div id="cart-item-count"></div>
 						</a>
 					</li>
 				</ul>
@@ -77,58 +77,10 @@
 								<th class="column-2"></th>
 								<th class="column-3">Price</th>
 								<th class="column-4">Quantity</th>
-								<th class="column-5">Total</th>
+								<th class="column-5">Action</th>
 							</tr>
-
-							<tr class="table_row">
-								<td class="column-1">
-									<div class="how-itemcart1">
-										<img src="./img/iphone-x-64gb-hh-600x600.png" width="70px" alt="IMG">
-									</div>
-								</td>
-								<td class="column-2">Fresh Strawberries</td>
-								<td class="column-3">$ 36.00</td>
-								<td class="column-4">
-									<div class="wrap-num-product d-flex flex-wrap ml-auto mr-0">
-										<div class="btn-num-product-down d-flex hov-btn3 flex-c-m">
-											<i class="fa-solid fa-minus"></i>
-										</div>
-
-										<input class="mtext-104 cl3 text-center num-product" type="number"
-											name="num-product1" value="1">
-
-										<div class="btn-num-product-up d-flex cl8 hov-btn3 flex-c-m">
-											<i class="fa-solid fa-plus"></i>
-										</div>
-									</div>
-								</td>
-								<td class="column-5">$ 36.00</td>
-							</tr>
-
-							<tr class="table_row">
-								<td class="column-1">
-									<div class="how-itemcart1">
-										<img src="./img/iphone-11-promax-xanh-ht-mobile.png" width="70px" alt="IMG">
-									</div>
-								</td>
-								<td class="column-2">Lightweight Jacket</td>
-								<td class="column-3">$ 16.00</td>
-								<td class="column-4">
-									<div class="wrap-num-product d-flex flex-wrap ml-auto mr-0">
-										<div class="btn-num-product-down d-flex hov-btn3 flex-c-m">
-											<i class="fa-solid fa-minus"></i>
-										</div>
-
-										<input class="mtext-104 cl3 text-center num-product" type="number"
-											name="num-product1" value="1">
-
-										<div class="btn-num-product-up d-flex cl8 hov-btn3 flex-c-m">
-											<i class="fa-solid fa-plus"></i>
-										</div>
-									</div>
-								</td>
-								<td class="column-5">$ 16.00</td>
-							</tr>
+							<tbody id="tableCart">
+							</tbody>
 						</table>
 					</div>
 
@@ -157,13 +109,12 @@
 							</div>
 	
 							<div class="size-209 p-t-1">
-								<span class="mtext-102 cl2">
-									$79.65
+								<span id="total"class="mtext-102 cl2">
 								</span>
 							</div>
 						</div>
 	
-						<button style="cursor:pointer;" class="justify-content-center align-items-center text-white size-116 bg3 bor14 hov-btn3 px-3">
+						<button onclick="Pay()" style="cursor:pointer;" class="justify-content-center align-items-center text-white size-116 bg3 bor14 hov-btn3 px-3">
 							Proceed to Checkout
 						</button>
 					</div>
@@ -259,6 +210,9 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
 		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 		crossorigin="anonymous"></script>
+	<script src="./customer/models/cartitem.js"></script>
+	<script src="./customer/models/cart.js"></script>
+	<script src="./customer/controller/shoppingcart.js"></script>
 </body>
 
 </html>
