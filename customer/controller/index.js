@@ -140,13 +140,15 @@ function renderCart() {
       total += parseInt(cartitem.price) * cartitem.quantity;
       totalItem += cartitem.quantity;
     }
-    getEle("cart-item-count").innerHTML = totalItem
+    getEle("cart-item-count").innerHTML = totalItem;
     getEle("gioHang").innerHTML = content;
     getEle("total").innerHTML = `Tổng tiền: ${total}<sup>$</sup>`;
+    getEle("empty").style.display = "none";
   } else {
     getEle("cartTable").style.display = "none";
     getEle("total").style.display = "none";
     getEle("cart-item-count").style.display = "none";
+    getEle("empty").style.display = "block";
   }
 }
 //Tính tổng tiền
