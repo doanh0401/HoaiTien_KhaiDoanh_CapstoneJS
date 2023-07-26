@@ -238,7 +238,7 @@ html, body {
   position: fixed;
   height: 100vh;
   width: 400px;
-  right: 0;
+  right: -20px;
   top: 70px;
   background-color: rgb(170, 170, 170);
   margin: auto;
