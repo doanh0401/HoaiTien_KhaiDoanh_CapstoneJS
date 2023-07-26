@@ -76,6 +76,7 @@ function filterProducts(data, filter) {
 function saveBtn(temp) {
   btn = temp;
 }
+// thêm sản phẩm vào giỏ hàng
 function putItemIntoCart(name) {
   getEle("cartTable").style.display = "block";
   getEle("total").style.display = "block";
