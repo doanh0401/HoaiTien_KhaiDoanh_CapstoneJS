@@ -168,8 +168,9 @@ function total() {
 //Xoá khỏi giỏ hàng
 function XoaSP(name) {
   cart.xoaGh(name);
-  renderCart();
   setLocalStorage();
+  getLocalStorage();
+  renderCart();
 }
 function setLocalStorage (){
   var dataToString = JSON.stringify(cart.arr);
@@ -199,3 +200,4 @@ function countItem() {
   getEle("cart-item-count").style.display = "block";
   getEle("cart-item-count").innerHTML = count;
 }
+getEle("cart").style.right ="-100%";
