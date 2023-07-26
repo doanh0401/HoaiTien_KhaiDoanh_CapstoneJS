@@ -235,7 +235,7 @@ html, body {
 #cart {
   position: fixed;
   height: 100vh;
-  width: 400px;
+  width: 390px;
   right: 0;
   top: 70px;
   background-color: rgb(170, 170, 170);
@@ -261,6 +261,7 @@ html, body {
 #cart table tr td {
   border-bottom: 1px solid #ddd;
   padding: 12px;
+  text-align: left;
 }
 #cart table thead tr th:last-child {
   text-align: right;
@@ -390,6 +391,7 @@ html, body {
 
 .body_admin {
   background: #599fd9;
+  background: -webkit-linear-gradient(to right, #599fd9, #c2e59c);
   background: linear-gradient(to right, #599fd9, #c2e59c);
   min-height: 100vh;
   overflow-x: hidden;

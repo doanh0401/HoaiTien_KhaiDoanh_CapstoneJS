@@ -12,7 +12,7 @@ function getLocalStorage() {
   }
 }
 function getEle(id) {
-    return document.getElementById(id);
+  return document.getElementById(id);
 }
 function renderCart() {
   var content = "";
@@ -48,51 +48,53 @@ function renderCart() {
       total += parseInt(cartitem.price) * cartitem.quantity;
       totalItem += cartitem.quantity;
     }
-      getEle("tableCart").innerHTML = content;
-      getEle("total").innerHTML = `$${total}`;
-      getEle("cart-item-count").innerHTML = totalItem;
+    getEle("tableCart").innerHTML = content;
+    getEle("total").innerHTML = `$${total}`;
+    getEle("cart-item-count").innerHTML = totalItem;
   } else {
-        getEle("total").innerHTML = `$0`;
-        getEle("cart-item-count").style.display = "none";
+    getEle("total").innerHTML = `$0`;
+    getEle("cart-item-count").style.display = "none";
   }
 }
 window.onload = function () {
-    getLocalStorage();
-    renderCart();
-  }
-function decrease(name,quantity){   
-    console.log("oke") 
-    if(quantity !== 1) quantity-=1;
+  getLocalStorage();
+  renderCart();
+}
+function decrease(name, quantity) {
+  console.log("oke")
+  if (quantity !== 1) {
+    quantity -= 1;
     var index = cart.timViTri(name);
-    cart.arr[index].quantity=quantity;
+    cart.arr[index].quantity = quantity;
     renderCart();
     setLocalStorage();
+  }
 }
-function increase(name,quantity){
-    quantity +=1;
-    var index = cart.timViTri(name);
-    cart.arr[index].quantity=quantity;
-    SaveData();
+function increase(name, quantity) {
+  quantity += 1;
+  var index = cart.timViTri(name);
+  cart.arr[index].quantity = quantity;
+  SaveData();
 }
 function XoaSP(name) {
-    cart.xoaGh(name);
-    SaveData();
+  cart.xoaGh(name);
+  SaveData();
 }
 function SaveData() {
-    renderCart();
-    setLocalStorage();
+  renderCart();
+  setLocalStorage();
 }
 function Pay() {
-    cart.arr= [];
-    console.log(cart.arr);
-    SaveData();
-    alert("Cám ơn bạn đã mua sắm");
+  cart.arr = [];
+  console.log(cart.arr);
+  SaveData();
+  alert("Cám ơn bạn đã mua sắm");
 }
 //Scroll header
-window.onscroll = function() {
+window.onscroll = function () {
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    document.getElementById("header").style.position="fixed";
+    document.getElementById("header").style.position = "fixed";
   } else {
-    document.getElementById("header").style.position="relative";
+    document.getElementById("header").style.position = "relative";
   }
 }

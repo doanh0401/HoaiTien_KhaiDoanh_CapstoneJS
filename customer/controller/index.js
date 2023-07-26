@@ -106,6 +106,7 @@ function putItemIntoCart(name) {
     renderCart();
   }
   countItem();
+  document.getElementById("cart").style.display = "block";
 }
 //Cart display
 let toggle = false;
@@ -119,6 +120,10 @@ cartShow.addEventListener("click", function () {
   }
   toggle = !toggle;
 });
+cartShow.addEventListener("click", function(){
+  document.getElementById("cart").style.display = "block";
+  
+});
 cartBtn.addEventListener("click", function () {
   document.getElementById("cart").style.right = "-100%";
 });
@@ -130,12 +135,12 @@ function renderCart() {
   if (cart.arr.length !== 0) {
     for (var i = 0; i < cart.arr.length; i++) {
       var cartitem = cart.arr[i];
-      content += `<tr>
+      content += `
                 <tr>
-                <td class="d-flex align-items-center"><img src="../.${cartitem.img}" width="70px" alt="">${cartitem.name}</td>
+                <td style="padding-left: 0;" class="d-flex align-items-center"><img src="../.${cartitem.img}" width="50px" alt="">${cartitem.name}</td>
                 <td><p><span id="price">${cartitem.price}</span><sup>$</sup></p></td>
                 <td style="padding-bottom:1.7rem;">${cartitem.quantity}</td>
-                <td style="cursor: pointer;padding-bottom:1.7rem;" onclick="XoaSP('${cartitem.name}')">Xóa</td>
+                <td style="cursor: pointer;padding-bottom:1.7rem; padding-right:0;" onclick="XoaSP('${cartitem.name}')">Xóa</td>
               </tr>`;
       total += parseInt(cartitem.price) * cartitem.quantity;
       totalItem += cartitem.quantity;
@@ -157,6 +162,7 @@ function total() {
   cart.arr = [];
   renderCart();
   setLocalStorage();
+  document.getElementById("cart").style.display = "none";
 }
 //Xoá khỏi giỏ hàng
 function XoaSP(name) {
@@ -187,6 +193,7 @@ function countItem() {
   for(let i=0; i<cart.arr.length;i++){
     var cartitem = cart.arr[i];
     count += cartitem.quantity;
+    setLocalStorage();  
   }
   getEle("cart-item-count").style.display = "block";
   getEle("cart-item-count").innerHTML = count;
