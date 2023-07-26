@@ -115,7 +115,7 @@ cartShow.addEventListener("click", function () {
   if (toggle) {
     document.getElementById("cart").style.right = "-100%";
   } else {
-    document.getElementById("cart").style.right = "0";
+    document.getElementById("cart").style.right = "-20px";
   }
   toggle = !toggle;
 });

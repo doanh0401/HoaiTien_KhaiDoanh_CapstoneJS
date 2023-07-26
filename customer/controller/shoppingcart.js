@@ -61,12 +61,11 @@ window.onload = function () {
     renderCart();
   }
 function decrease(name,quantity){   
-    console.log("oke") 
+    console.log(name);
     if(quantity !== 1) quantity-=1;
     var index = cart.timViTri(name);
     cart.arr[index].quantity=quantity;
-    renderCart();
-    setLocalStorage();
+    SaveData();
 }
 function increase(name,quantity){
     quantity +=1;
@@ -75,24 +74,23 @@ function increase(name,quantity){
     SaveData();
 }
 function XoaSP(name) {
-    cart.xoaGh(name);
-    SaveData();
+    if(cart.arr.length === 1 ) {
+      cart.arr= [];
+      SaveData();
+      document.location.reload();
+    } 
+    else {
+      cart.xoaGh(name);
+      SaveData();
+    }
 }
 function SaveData() {
-    renderCart();
     setLocalStorage();
+    renderCart();
 }
 function Pay() {
     cart.arr= [];
-    console.log(cart.arr);
     SaveData();
     alert("Cám ơn bạn đã mua sắm");
 }
-//Scroll header
-window.onscroll = function() {
-  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    document.getElementById("header").style.position="fixed";
-  } else {
-    document.getElementById("header").style.position="relative";
-  }
-}
+

@@ -19,5 +19,4 @@ function Cart () {
             this.arr.splice(index,1);
         }
     };
-    this.capNhatSL = function (name) {};
 }
