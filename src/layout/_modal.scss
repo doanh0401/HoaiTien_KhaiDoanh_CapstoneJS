@@ -4,8 +4,11 @@
     position:fixed;
     height: 100vh;
     width: 400px;
-    top: 0;
     right: -20px;
+    top: 70px;
+    @media(min-width:768px){
+        top: 94px;
+    }
     background-color: rgb(170 170 170);
     margin:auto;
     text-align: center;
@@ -21,6 +24,7 @@
         tr td{
             border-bottom: 1px solid #ddd;
             padding: 12px;
+            text-align: left;
         }
         thead tr th:last-child{
             text-align: right;

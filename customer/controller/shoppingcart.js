@@ -93,4 +93,3 @@ function Pay() {
     SaveData();
     alert("Cám ơn bạn đã mua sắm");
 }
-
