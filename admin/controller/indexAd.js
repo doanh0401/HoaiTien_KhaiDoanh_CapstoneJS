@@ -86,44 +86,74 @@ function addProduct() {
   var type = getEle("typePhone").value;
   var describe = getEle("MoTa").value;
   if (checkValidation(true)) {
-      getListProduct()
-          .then(function (result) {
-              isValue = validation.checkExistName(name, "errorName", "(*) Tên sản phẩm đã tồn tại", result);  
-              if (isValue) {
-                var product = new Product("", name, price, image, screen, backCamera, frontCamera, describe, type);
-                var promise = api.addProductApi(product);
-                promise
-                  .then(function (results) {
-                    getListProduct();
-                    document.querySelector(".close").click();
-                  })
-                  .catch(function (error) {
-                    console.log(error);
-                  });
-              }       
-            });            
-         
-          }
+    getListProduct()
+      .then(function (result) {
+        isValue = validation.checkExistName(name, "errorName", "(*) Tên sản phẩm đã tồn tại", result);
+        if (isValue) {
+          var product = new Product("", name, price, image, screen, backCamera, frontCamera, describe, type);
+          var promise = api.addProductApi(product);
+          promise
+            .then(function (results) {
+              getListProduct();
+              document.querySelector(".close").click();
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+        }
+      });
+
+  }
 }
 // hàm xóa sản phẩm
 function delProduct(id) {
   document.getElementById("confirmation-popup").style.display = "block";
-  document.getElementById("confirm-button").addEventListener("click", function() {
-  var promise = api.delProductApi(id);
-  promise
-    .then(function (results) {
-      getListProduct();
-      alert(`Delete ${results.data.name} success`)
-    })
-    .catch(function (error) {
-      console.log(error);
-    })
-    document.getElementById("confirmation-popup").style.display = "none";
-  });
+  
+  function onDeleteClick() {
+    var promise = api.delProductApi(id);
+    promise
+      .then(function (results) {
+        getListProduct();
+        alert(`Delete ${results.data.name} success`);
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
+      .finally(function () {
+        document.getElementById("confirmation-popup").style.display = "none";
+      });
+      
+    // Gỡ bỏ sự kiện "click" sau khi đã thực thi
+    document.getElementById("confirm-button").removeEventListener("click", onDeleteClick);
+  }
+  
+  document.getElementById("confirm-button").addEventListener("click", onDeleteClick);
 }
+
+// function delProduct(id) {
+//   console.log(id);
+//   document.getElementById("confirmation-popup").style.display = "block";
+//   document.getElementById("confirm-button").addEventListener("click", function () {
+//     console.log(id);
+//     var promise = api.delProductApi(id);
+//     promise
+//       .then(function (results) {
+//         getListProduct();
+//         alert(`Delete ${results.data.name} success`)
+//       })
+//       .catch(function (error) {
+//         console.log(error);
+//       })
+//       .finaly(function () {
+//         document.getElementById("confirmation-popup").style.display = "none";
+//       })
+//   });
+// }
 document.getElementById("cancel-button").addEventListener("click", function() {
   document.getElementById("confirmation-popup").style.display = "none";
 });
+
+
 // hàm sửa sản phẩm 
 function editProduct(id) {
   document.querySelector(".modal-title").innerHTML = "Edit Product";
