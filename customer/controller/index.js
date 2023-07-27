@@ -156,11 +156,13 @@ function renderCart() {
     getEle("gioHang").innerHTML = content;
     getEle("total").innerHTML = `Tổng tiền: ${total}<sup>$</sup>`;
     getEle("empty").style.display = "none";
+    getEle("paybutton").style.display="block";
   } else {
     getEle("cartTable").style.display = "none";
     getEle("total").style.display = "none";
     getEle("cart-item-count").style.display = "none";
     getEle("empty").style.display = "block";
+    getEle("paybutton").style.display="none";
   }
 }
 //Tính tổng tiền
