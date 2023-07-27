@@ -80,6 +80,7 @@ function saveBtn(temp) {
 function putItemIntoCart(name) {
   getEle("cartTable").style.display = "block";
   getEle("total").style.display = "block";
+  getEle("cart").style.display = "block";
   const index = cart.timViTri(name);
   console.log(index);
   if (index === -1) {
@@ -107,7 +108,7 @@ function putItemIntoCart(name) {
     renderCart();
   }
   countItem();
-  document.getElementById("cart").style.display = "block";
+  getEle("pay").style.display ="inline-block";
 }
 //Cart display
 let toggle = false;
@@ -115,18 +116,23 @@ const cartBtn = document.querySelector(".fa-times");
 const cartShow = getEle("cartToggle");
 cartShow.addEventListener("click", function () {
   if (toggle) {
-    document.getElementById("cart").style.right = "-100%";
+    getEle("cart").style.right = "-100%";
   } else {
-    document.getElementById("cart").style.right = "-20px";
+    getEle("cart").style.right = "-20px";
   }
   toggle = !toggle;
 });
 cartShow.addEventListener("click", function(){
-  document.getElementById("cart").style.display = "block";
-  
+  getEle("cart").style.display = "block";
+  if(cart.arr.length === 0) {
+    getEle("pay").style.display ="none";
+  }else {
+    getEle("pay").style.display ="inline-block";
+  }
 });
 cartBtn.addEventListener("click", function () {
-  document.getElementById("cart").style.right = "-100%";
+  getEle("cart").style.display = "none";
+  // document.getElementById("cart").style.right = "-100%";
 });
 //Hiển thị giỏ hàng
 function renderCart() {
