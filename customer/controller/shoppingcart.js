@@ -61,7 +61,6 @@ window.onload = function () {
     renderCart();
   }
 function decrease(name,quantity){   
-    console.log(name);
     if(quantity !== 1) quantity-=1;
     var index = cart.timViTri(name);
     cart.arr[index].quantity=quantity;

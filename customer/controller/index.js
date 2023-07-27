@@ -82,7 +82,6 @@ function putItemIntoCart(name) {
   getEle("total").style.display = "block";
   getEle("cart").style.display = "block";
   const index = cart.timViTri(name);
-  console.log(index);
   if (index === -1) {
     for (let i = 0; i < listProduct.length; i++) {
       var product = listProduct[i];
@@ -199,7 +198,6 @@ window.onload = function () {
 }
 function countItem() {
   let count = 0;
-  console.log(cart.arr);
   for(let i=0; i<cart.arr.length;i++){
     var cartitem = cart.arr[i];
     count += cartitem.quantity;
