@@ -16,7 +16,15 @@
         margin-bottom: $mg-2;
     }
     #outerimg{ display: none};
-    #innerimg{ display: block};
+    #innerimg{ display: block;
+        @media (max-width: 767px){
+            height: 400px;
+        };
+        @media (max-width: 400px){
+        width: 200px;
+        height:300px;
+     }; 
+    };
     @media (min-width: 768px) {
         #outerimg{ display: block};
         #innerimg{ display: none};
